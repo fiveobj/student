@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".course.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="656dp">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp">
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="20.51dp"
+            android:layout_height="20.45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="31dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginBottom="24dp"
+            android:background="@mipmap/home" />
+
+        <ImageButton
+            android:id="@+id/course"
+            android:layout_width="20.37dp"
+            android:layout_height="20.37dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="99dp"
+            android:layout_marginLeft="99dp"
+            android:layout_marginBottom="23dp"
+            android:background="@mipmap/course" />
+
+        <ImageButton
+            android:id="@+id/work"
+            android:layout_width="21.36dp"
+            android:layout_height="21.97dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="170dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginBottom="23dp"
+            android:background="@mipmap/work" />
+
+        <ImageButton
+            android:id="@+id/contacts"
+            android:layout_width="20.9dp"
+            android:layout_height="21.33dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="242dp"
+            android:layout_marginLeft="242dp"
+            android:layout_marginBottom="23dp"
+            android:background="@mipmap/contacts" />
+
+        <ImageButton
+            android:id="@+id/my"
+            android:layout_width="18.79dp"
+            android:layout_height="23.35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="307dp"
+            android:layout_marginLeft="307dp"
+            android:layout_marginBottom="21dp"
+            android:background="@mipmap/my" />
+
+    </RelativeLayout>
+</LinearLayout>
