@@ -7,9 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 
 import com.example.student.R;
+import com.example.student.customclass.stuCourseAdapter;
+import com.example.student.customclass.stuCourseListViewItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +32,12 @@ public class courseFragment extends android.app.Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    //
+    private ListView stucourselistv,recomcourselistv;
+    private stuCourseAdapter stuadapter;
+    private List<stuCourseListViewItem> stulist=new ArrayList<stuCourseListViewItem>();
 
     public courseFragment() {
         // Required empty public constructor
@@ -61,7 +73,20 @@ public class courseFragment extends android.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.fragment_course,null);
+        stucourselistv=(ListView)view.findViewById(R.id.stu_course);
+        stulist=getData();
+        stuadapter=new stuCourseAdapter(this.getActivity(),R.layout.stucourseitem,stulist);
+        stucourselistv.setAdapter(stuadapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_course, container, false);
+        return view;
+    }
+
+    public List<stuCourseListViewItem> getData(){
+        List<stuCourseListViewItem> list=new ArrayList<stuCourseListViewItem>();
+        for(int i=0;i<3;i++){
+            list.add(new stuCourseListViewItem("服务外包","张三",R.mipmap.contacts));
+        }
+        return list;
     }
 }
