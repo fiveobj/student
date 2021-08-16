@@ -5,23 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".course.MainActivity">
+    tools:context=".MainActivity">
+
 
     <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
-        android:layout_height="64dp">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="656dp">
+        android:layout_height="723dp"
+        android:orientation="vertical">
 
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/lead"
         android:layout_width="match_parent"
-        android:layout_height="49dp">
+        android:layout_height="50dp"
+       >
 
         <ImageButton
             android:id="@+id/home"
@@ -82,6 +81,71 @@
             android:layout_marginLeft="307dp"
             android:layout_marginBottom="21dp"
             android:background="@mipmap/my" />
+
+        <TextView
+            android:id="@+id/tv_course"
+            android:layout_width="20dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="99dp"
+            android:layout_marginLeft="99dp"
+            android:layout_marginBottom="9dp"
+            android:text="课程"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_work"
+            android:layout_width="20dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="169dp"
+            android:layout_marginLeft="169dp"
+            android:layout_marginBottom="9dp"
+            android:text="工作"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_contacts"
+            android:layout_width="20dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="242dp"
+            android:layout_marginLeft="242dp"
+            android:layout_marginBottom="9dp"
+            android:text="人脉"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_home"
+            android:layout_width="20dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginBottom="9dp"
+            android:text="首页"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_my"
+            android:layout_width="20dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="307dp"
+            android:layout_marginLeft="307dp"
+            android:layout_marginBottom="9dp"
+            android:text="我的"
+            android:textSize="10sp" />
 
     </RelativeLayout>
 </LinearLayout>
