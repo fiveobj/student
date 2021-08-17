@@ -10,8 +10,31 @@
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp">
+        android:layout_height="64dp"
+        android:background="#FFFFFF">
 
+        <ImageButton
+            android:id="@+id/course_search"
+            android:layout_width="40dp"
+            android:layout_height="26dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="256dp"
+            android:layout_marginLeft="256dp"
+            android:layout_marginTop="29dp"
+            android:background="@mipmap/course_search" />
+        <ImageButton
+            android:id="@+id/course_add"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:background="@mipmap/course_add"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="308dp"
+            android:layout_marginLeft="308dp"
+            android:layout_marginTop="29dp"/>
     </RelativeLayout>
 <ScrollView
     android:layout_width="match_parent"
@@ -33,7 +56,7 @@
         <ListView
             android:id="@+id/stu_course"
             android:layout_width="330dp"
-            android:layout_height="280dp"
+            android:layout_height="294dp"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:divider="#FFF5F5F5"
@@ -46,13 +69,16 @@
             android:layout_marginLeft="25dp"
             android:textColor="#000000"
             android:textSize="15sp"/>
+
         <ListView
-            android:layout_marginTop="10dp"
             android:id="@+id/recom_course"
             android:layout_width="330dp"
-            android:layout_height="wrap_content"
+            android:layout_height="267dp"
             android:layout_gravity="center"
-             />
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF"
+            android:divider="#FFF5F5F5"
+            android:dividerHeight="1dp"/>
     </LinearLayout>
 
 </ScrollView>

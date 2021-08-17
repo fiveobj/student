@@ -30,6 +30,7 @@ private RelativeLayout lead;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         home=(ImageButton)findViewById(R.id.home);
         course=(ImageButton)findViewById(R.id.course);
         work=(ImageButton)findViewById(R.id.work);
@@ -43,6 +44,7 @@ private RelativeLayout lead;
         //设置顶部状态栏为透明
         getWindow().setStatusBarColor(Color.TRANSPARENT);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+        //添加监听事件
         setListeners();
         //设置默认显示页面为主页
         manager=getFragmentManager();
@@ -52,8 +54,21 @@ private RelativeLayout lead;
         //设置导航栏背景颜色
         lead=(RelativeLayout)findViewById(R.id.lead);
         lead.setBackgroundColor(Color.parseColor("#F5F5F5"));
+
         home.setImageResource(R.mipmap.home1);
         tv_home.setTextColor(Color.parseColor("#1E90FF"));
+
+        int id=getIntent().getIntExtra("id",0);
+        if(id==1){
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_layout,new courseFragment())
+                    .addToBackStack(null)
+                    .commit();
+            ResetImg();
+            course.setImageResource(R.mipmap.course1);
+            tv_course.setTextColor(Color.parseColor("#1E90FF"));
+        }
 
     }
     private void setListeners(){

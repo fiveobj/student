@@ -1,5 +1,6 @@
 package com.example.student.course;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,10 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 
 import com.example.student.R;
+import com.example.student.customclass.recomCourseAdapter;
+import com.example.student.customclass.recomCourseListViewItem;
 import com.example.student.customclass.stuCourseAdapter;
 import com.example.student.customclass.stuCourseListViewItem;
 
@@ -34,10 +38,18 @@ public class courseFragment extends android.app.Fragment {
     private String mParam2;
 
 
-    //
-    private ListView stucourselistv,recomcourselistv;
+    //-------------------------------------在学课程--------------------------------------------
+
+    private ListView stucourselistv;
     private stuCourseAdapter stuadapter;
     private List<stuCourseListViewItem> stulist=new ArrayList<stuCourseListViewItem>();
+
+    //-------------------------------------推荐课程-------------------------------------------
+
+    private ListView recomcourselistv;
+    private recomCourseAdapter recomadapter;
+    private List<recomCourseListViewItem> recomlist=new ArrayList<recomCourseListViewItem>();
+
 
     public courseFragment() {
         // Required empty public constructor
@@ -74,19 +86,59 @@ public class courseFragment extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_course,null);
+
+        //-------------------------------------在学课程--------------------------------------------
+
         stucourselistv=(ListView)view.findViewById(R.id.stu_course);
-        stulist=getData();
+        stulist=getstuData();
         stuadapter=new stuCourseAdapter(this.getActivity(),R.layout.stucourseitem,stulist);
         stucourselistv.setAdapter(stuadapter);
+        //添加点击事件
+        stucourselistv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=null;
+                intent=new Intent(getActivity(), stucourceActivity.class);
+
+                startActivity(intent);
+
+            }
+        });
+        //-------------------------------------推荐课程--------------------------------------------
+
+        recomcourselistv=(ListView)view.findViewById(R.id.recom_course);
+        recomlist=getrecomData();
+        recomadapter=new recomCourseAdapter(this.getActivity(),R.layout.recomcourseitem,recomlist);
+        recomcourselistv.setAdapter(recomadapter);
+        //添加点击事件
+        recomcourselistv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=null;
+                intent=new Intent(getActivity(), stucourceActivity.class);
+
+                startActivity(intent);
+            }
+        });
         // Inflate the layout for this fragment
         return view;
     }
 
-    public List<stuCourseListViewItem> getData(){
+    public List<stuCourseListViewItem> getstuData(){
         List<stuCourseListViewItem> list=new ArrayList<stuCourseListViewItem>();
         for(int i=0;i<3;i++){
             list.add(new stuCourseListViewItem("服务外包","张三",R.mipmap.contacts));
         }
+        return list;
+    }
+
+    public List<recomCourseListViewItem>getrecomData(){
+        List<recomCourseListViewItem> list=new ArrayList<recomCourseListViewItem>();
+
+        for(int i=0;i<3;i++){
+            list.add(new recomCourseListViewItem("服务外包","这是一个很烦需要整天肝代码还没有UI的比赛",R.mipmap.contacts1));
+        }
+
         return list;
     }
 }
