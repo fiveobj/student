@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signinActivity"
+    android:background="@mipmap/signin">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="349dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="442dp"
+        android:layout_marginEnd="-76dp"
+        android:layout_marginRight="-76dp"
+        android:background="@mipmap/signin_back" />
+
+    <ImageView
+        android:layout_width="198dp"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp"
+        android:background="@mipmap/logo" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="260dp"
+        android:scaleType="center"
+        android:background="@mipmap/signin_id_back" />
+
+    <ImageView
+        android:layout_width="22dp"
+        android:layout_height="23dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="274dp"
+        android:background="@mipmap/signin_id" />
+
+    <EditText
+        android:id="@+id/signin_id"
+        android:background="#00FFFFFF"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="272.5dp"
+        android:hint="账号"
+        android:textColor="#D3D3D3"
+        android:textSize="18sp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="320dp"
+        android:scaleType="center"
+        android:background="@mipmap/signin_id_back" />
+
+    <ImageView
+        android:layout_width="19dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="335dp"
+        android:background="@mipmap/signin_pass"
+        />
+
+    <EditText
+        android:id="@+id/signin_pass"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="334dp"
+        android:background="#00FFFFFF"
+        android:hint="密码"
+        android:textColor="#D3D3D3"
+        android:textSize="18sp"
+        android:inputType="textPassword"/>
+    <ImageButton
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/signin_signin_back"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="413dp"
+        android:gravity="center"
+        android:text="登       录"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="21sp"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="忘记密码？"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="710dp"
+        android:layout_marginLeft="53dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="立即注册"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="710dp"
+        android:layout_marginLeft="243dp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>
