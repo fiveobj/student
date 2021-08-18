@@ -55,7 +55,7 @@ private RelativeLayout lead;
         lead=(RelativeLayout)findViewById(R.id.lead);
         lead.setBackgroundColor(Color.parseColor("#F5F5F5"));
 
-        home.setImageResource(R.mipmap.home1);
+        home.setBackgroundResource(R.mipmap.home1);
         tv_home.setTextColor(Color.parseColor("#1E90FF"));
 
         int id=getIntent().getIntExtra("id",0);
@@ -66,7 +66,7 @@ private RelativeLayout lead;
                     .addToBackStack(null)
                     .commit();
             ResetImg();
-            course.setImageResource(R.mipmap.course1);
+            course.setBackgroundResource(R.mipmap.course1);
             tv_course.setTextColor(Color.parseColor("#1E90FF"));
         }
 
@@ -89,27 +89,27 @@ private class OnClick implements View.OnClickListener{
         switch (v.getId()){
             case R.id.home:
                 transaction.replace(R.id.main_layout,new homeFragment());
-                home.setImageResource(R.mipmap.home1);
+                home.setBackgroundResource(R.mipmap.home1);
                 tv_home.setTextColor(Color.parseColor("#1E90FF"));
                 break;
             case R.id.course:
                 transaction.replace(R.id.main_layout,new courseFragment());
-                course.setImageResource(R.mipmap.course1);
+                course.setBackgroundResource(R.mipmap.course1);
                 tv_course.setTextColor(Color.parseColor("#1E90FF"));
                 break;
             case R.id.work:
                 transaction.replace(R.id.main_layout,new workFragment());
-                work.setImageResource(R.mipmap.work1);
+                work.setBackgroundResource(R.mipmap.work1);
                 tv_work.setTextColor(Color.parseColor("#1E90FF"));
                 break;
             case R.id.contacts:
                 transaction.replace(R.id.main_layout,new ContactsFragment());
-                contacts.setImageResource(R.mipmap.contacts1);
+                contacts.setBackgroundResource(R.mipmap.contacts1);
                 tv_contacts.setTextColor(Color.parseColor("#1E90FF"));
                 break;
             case R.id.my:
                 transaction.replace(R.id.main_layout,new myFragment());
-                my.setImageResource(R.mipmap.my1);
+                my.setBackgroundResource(R.mipmap.my1);
                 tv_my.setTextColor(Color.parseColor("#1E90FF"));
                 break;
             default:
@@ -120,11 +120,11 @@ private class OnClick implements View.OnClickListener{
 }
     private void ResetImg()
     {
-        home.setImageResource(R.mipmap.home);
-        course.setImageResource(R.mipmap.course);
-        work.setImageResource(R.mipmap.work);
-        contacts.setImageResource(R.mipmap.contacts);
-        my.setImageResource(R.mipmap.my);
+        home.setBackgroundResource(R.mipmap.home);
+        course.setBackgroundResource(R.mipmap.course);
+        work.setBackgroundResource(R.mipmap.work);
+        contacts.setBackgroundResource(R.mipmap.contacts);
+        my.setBackgroundResource(R.mipmap.my);
         tv_my.setTextColor(Color.parseColor("#565657"));
         tv_contacts.setTextColor(Color.parseColor("#565657"));
         tv_course.setTextColor(Color.parseColor("#565657"));

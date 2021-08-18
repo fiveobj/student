@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".contacts.ContactsFragment">
+    tools:context=".contacts.ContactsFragment"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#1E90FF"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的人脉"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"/>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="59dp"
+            android:src="@mipmap/new_tabback"
+            android:scaleType="center" />
+        <ImageButton
+            android:id="@+id/new_new"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="70dp"
+            android:background="@mipmap/new_new"
+            android:layout_marginLeft="50dp"/>
+        <TextView
+            android:id="@+id/new_newtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的消息"
+            android:layout_marginTop="95dp"
+            android:layout_marginLeft="38dp"
+            android:textSize="11sp"
+            android:textColor="#696969"/>
+        <ImageButton
+            android:id="@+id/new_people"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="70dp"
+            android:background="@mipmap/new_people"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/new_peopletv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人脉"
+            android:layout_marginTop="95dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="11sp"
+            android:textColor="#696969"/>
+        <ImageButton
+            android:id="@+id/new_team"
+            android:layout_width="18dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="70dp"
+            android:background="@mipmap/new_team"
+            android:layout_marginLeft="304dp"/>
+        <TextView
+            android:id="@+id/new_teamtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的团队"
+            android:layout_marginTop="95dp"
+            android:layout_marginLeft="290dp"
+            android:textSize="11sp"
+            android:textColor="#696969"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/new_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

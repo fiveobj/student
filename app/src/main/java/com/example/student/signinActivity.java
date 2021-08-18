@@ -48,7 +48,13 @@ public class signinActivity extends AppCompatActivity {
                     Toast.makeText(signinActivity.this, "请输入用户名", Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(mypass)){
                     Toast.makeText(signinActivity.this, "请输入密码", Toast.LENGTH_SHORT).show();
-                }else if(){//密码正确
+                }
+                else{
+                    Toast.makeText(signinActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                    Intent data=new Intent();
+                    startActivity(new Intent(signinActivity.this,MainActivity.class));
+                }
+                /*else if(){//密码正确
                     Toast.makeText(signinActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                     Intent data=new Intent();
                     startActivity(new Intent(signinActivity.this,MainActivity.class));
@@ -56,7 +62,7 @@ public class signinActivity extends AppCompatActivity {
                     Toast.makeText(signinActivity.this, "输入的用户名和密码不一致", Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(signinActivity.this, "此用户不存在", Toast.LENGTH_SHORT).show();
-                }
+                }*/
             }
         });
     }

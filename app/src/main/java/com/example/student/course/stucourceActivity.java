@@ -41,7 +41,7 @@ private FragmentTransaction transaction;
         dtv=(TextView)findViewById(R.id.stucourse_detailtv);
         ltv=(TextView)findViewById(R.id.stucourse_livetv);
 
-        recourse.setImageResource(R.mipmap.stucourse_resource1);
+        recourse.setBackgroundResource(R.mipmap.stucourse_resource1);
         retv.setTextColor(Color.parseColor("#1E90FF"));
 
         //添加监听事件
@@ -71,34 +71,34 @@ private FragmentTransaction transaction;
             switch (v.getId()){
                 case R.id.stucourse_recourse:
                     transaction.replace(R.id.stucourse_layout,new recourseFragment());
-                    recourse.setImageResource(R.mipmap.stucourse_resource1);
+                    recourse.setBackgroundResource(R.mipmap.stucourse_resource1);
                     retv.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 case R.id.stucourse_new:
                     transaction.replace(R.id.stucourse_layout,new newsFragment());
-                    news.setImageResource(R.mipmap.stucourse_new1);
+                    news.setBackgroundResource(R.mipmap.stucourse_new1);
                     ntv.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 case R.id.stucourse_job:
                     transaction.replace(R.id.stucourse_layout,new jobFragment());
-                    job.setImageResource(R.mipmap.stucourse_job1);
+                    job.setBackgroundResource(R.mipmap.stucourse_job1);
                     jtv.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 case R.id.stucourse_live:
                     transaction.replace(R.id.stucourse_layout,new liveFragment());
-                    live.setImageResource(R.mipmap.stucourse_live1);
+                    live.setBackgroundResource(R.mipmap.stucourse_live1);
                     ltv.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 case R.id.stucourse_detail:
                     transaction.replace(R.id.stucourse_layout,new detailFragment());
-                    detail.setImageResource(R.mipmap.stucourse_detail1);
+                    detail.setBackgroundResource(R.mipmap.stucourse_detail1);
                     dtv.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 case R.id.stucourse_back:
                     Intent intent=new Intent(stucourceActivity.this,MainActivity.class);
                     intent.putExtra("id",1);
                     startActivity(intent);
-                    back.setImageResource(R.mipmap.stucourse_detail1);
+                    back.setBackgroundResource(R.mipmap.stucourse_detail1);
                     dtv.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 default:
@@ -108,11 +108,11 @@ private FragmentTransaction transaction;
         }
     }
     private void ResetImg(){
-        recourse.setImageResource(R.mipmap.stucourse_resource);
-        news.setImageResource(R.mipmap.stucourse_new);
-        job.setImageResource(R.mipmap.stucourse_job);
-        live.setImageResource(R.mipmap.stucourse_live);
-        detail.setImageResource(R.mipmap.stucourse_detail);
+        recourse.setBackgroundResource(R.mipmap.stucourse_resource);
+        news.setBackgroundResource(R.mipmap.stucourse_new);
+        job.setBackgroundResource(R.mipmap.stucourse_job);
+        live.setBackgroundResource(R.mipmap.stucourse_live);
+        detail.setBackgroundResource(R.mipmap.stucourse_detail);
         retv.setTextColor(Color.parseColor("#565657"));
         dtv.setTextColor(Color.parseColor("#565657"));
         jtv.setTextColor(Color.parseColor("#565657"));
