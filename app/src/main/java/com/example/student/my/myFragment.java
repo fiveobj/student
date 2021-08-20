@@ -7,8 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import com.example.student.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +33,16 @@ public class myFragment extends android.app.Fragment {
     private String mParam1;
     private String mParam2;
 
+    private ListView mylistView1,mylistView2,mylistView3;
+    private List<Map<String,Object>> list1=new ArrayList<Map<String,Object>>();
+    private List<Map<String,Object>> list2=new ArrayList<Map<String,Object>>();
+    private List<Map<String,Object>> list3=new ArrayList<Map<String,Object>>();
+    int[] imageId1=new int[]{R.mipmap.my_id,R.mipmap.my_account};
+    String[] title1=new String[]{"我的账号","我的账户"};
+    int[] imageId2=new int[]{R.mipmap.my_course,R.mipmap.my_exp,R.mipmap.my_sand,R.mipmap.my_post};
+    String[] title2=new String[]{"我的课程","我的经历","投递记录","理想职位"};
+    int[] imageId3=new int[]{R.mipmap.my_set,R.mipmap.my_service};
+    String[] title3=new String[]{"设置","智能客服"};
     public myFragment() {
         // Required empty public constructor
     }
@@ -60,7 +77,65 @@ public class myFragment extends android.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my, container, false);
+        View view=inflater.inflate(R.layout.fragment_my, null);
+
+        mylistView1=(ListView)view.findViewById(R.id.my_listview1);
+        mylistView2=(ListView)view.findViewById(R.id.my_listview2);
+        mylistView3=(ListView)view.findViewById(R.id.my_listview3);
+        list1=getData1();
+        list2=getData2();
+        list3=getData3();
+
+        SimpleAdapter adapter1=new SimpleAdapter(this.getActivity(),list1,
+                R.layout.my_listviewitem,new String[]{"tab","image"},new int[]{R.id.tv,R.id.image
+        });
+        mylistView1.setAdapter(adapter1);
+
+        SimpleAdapter adapter2=new SimpleAdapter(this.getActivity(),list2,
+                R.layout.my_listviewitem,new String[]{"tab","image"},new int[]{R.id.tv,R.id.image
+        });
+        mylistView2.setAdapter(adapter2);
+
+        SimpleAdapter adapter3=new SimpleAdapter(this.getActivity(),list3,
+                R.layout.my_listviewitem,new String[]{"tab","image"},new int[]{R.id.tv,R.id.image
+        });
+        mylistView3.setAdapter(adapter3);
+
+
+        return view;
     }
+    public List<Map<String,Object>> getData1(){
+        List<Map<String ,Object>> list=new ArrayList<Map<String, Object>>();
+        for (int i=0;i<imageId1.length;i++){
+            Map<String,Object> map=new HashMap<String, Object>();
+            map.put("image",imageId1[i]);
+            map.put("tab",title1[i]);
+            list.add(map);
+        }
+        return list;
+    }
+
+    public List<Map<String,Object>> getData2(){
+        List<Map<String ,Object>> list=new ArrayList<Map<String, Object>>();
+        for (int i=0;i<imageId2.length;i++){
+            Map<String,Object> map=new HashMap<String, Object>();
+            map.put("image",imageId2[i]);
+            map.put("tab",title2[i]);
+            list.add(map);
+        }
+        return list;
+    }
+
+
+    public List<Map<String,Object>> getData3(){
+        List<Map<String ,Object>> list=new ArrayList<Map<String, Object>>();
+        for (int i=0;i<imageId3.length;i++){
+            Map<String,Object> map=new HashMap<String, Object>();
+            map.put("image",imageId3[i]);
+            map.put("tab",title3[i]);
+            list.add(map);
+        }
+        return list;
+    }
+
 }
