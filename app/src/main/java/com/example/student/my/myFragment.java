@@ -1,5 +1,6 @@
 package com.example.student.my;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.example.student.R;
 
@@ -43,6 +46,7 @@ public class myFragment extends android.app.Fragment {
     String[] title2=new String[]{"我的课程","我的经历","投递记录","理想职位"};
     int[] imageId3=new int[]{R.mipmap.my_set,R.mipmap.my_service};
     String[] title3=new String[]{"设置","智能客服"};
+    private TextView collect,att,resume;
     public myFragment() {
         // Required empty public constructor
     }
@@ -79,6 +83,11 @@ public class myFragment extends android.app.Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_my, null);
 
+        collect=(TextView)view.findViewById(R.id.my_collect);
+        att=(TextView)view.findViewById(R.id.my_att);
+        resume=(TextView)view.findViewById(R.id.my_resume);
+
+
         mylistView1=(ListView)view.findViewById(R.id.my_listview1);
         mylistView2=(ListView)view.findViewById(R.id.my_listview2);
         mylistView3=(ListView)view.findViewById(R.id.my_listview3);
@@ -102,6 +111,74 @@ public class myFragment extends android.app.Fragment {
         mylistView3.setAdapter(adapter3);
 
 
+        //textview点击事件
+        setListener();
+        //mylistview1点击事件
+        mylistView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent l1=null;
+                switch (position){
+                    case 0:
+                        l1=new Intent(getActivity(),myidActivity.class);
+                        break;
+                    case 1:
+                        l1=new Intent(getActivity(),myaccountActivity.class);
+                        break;
+                    default:
+                        break;
+                }
+                startActivity(l1);
+            }
+        });
+
+
+
+        //mylistview2点击事件
+
+        mylistView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent l2=null;
+                switch (position){
+                    case 0:
+                        l2=new Intent(getActivity(),mycourseActivity.class);
+                        break;
+                    case 1:
+                        l2=new Intent(getActivity(),myexpActivity.class);
+                        break;
+                    case 2:
+                        l2=new Intent(getActivity(),mysandActivity.class);
+                        break;
+                    case 3:
+                        l2=new Intent(getActivity(),mypostActivity.class);
+                        break;
+                    default:
+                        break;
+                }
+                startActivity(l2);
+            }
+        });
+
+
+        //mylistview3点击事件
+        mylistView3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent l3=null;
+                switch (position){
+                    case 0:
+                        l3=new Intent(getActivity(),mysetActivity.class);
+                        break;
+                    case 1:
+                        l3=new Intent(getActivity(),myserviceActivity.class);
+                        break;
+                    default:
+                        break;
+                }
+                startActivity(l3);
+            }
+        });
         return view;
     }
     public List<Map<String,Object>> getData1(){
@@ -138,4 +215,31 @@ public class myFragment extends android.app.Fragment {
         return list;
     }
 
+    private void setListener(){
+        OnClick onClick=new OnClick();
+        collect.setOnClickListener(onClick);
+        att.setOnClickListener(onClick);
+        resume.setOnClickListener(onClick);
+    }
+    private class OnClick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            Intent intent=null;
+            switch (v.getId()){
+                case R.id.my_collect:
+                    intent=new Intent(getActivity(),mycollectActivity.class);
+                    break;
+                case R.id.my_att:
+                    intent=new Intent(getActivity(),myattActivity.class);
+                    break;
+                case R.id.my_resume:
+                    intent=new Intent(getActivity(),myresumeActivity.class);
+                    break;
+                default:
+                    break;
+            }
+            startActivity(intent);
+        }
+    }
 }
