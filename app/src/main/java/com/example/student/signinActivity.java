@@ -16,6 +16,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -30,8 +34,13 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class signinActivity extends AppCompatActivity {
 
@@ -68,6 +77,7 @@ public class signinActivity extends AppCompatActivity {
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 loginPost();
             }
         });
@@ -87,6 +97,46 @@ public class signinActivity extends AppCompatActivity {
     private void getData(String stuNo,String password){
         OkHttpClient okHttpClient= new OkHttpClient.Builder().connectTimeout(8000, TimeUnit.MILLISECONDS).build();
         FormBody.Builder builder=new FormBody.Builder();
+        final RequestBody requestBody=builder.add("username",stuNo).add("password",password).build();
+        final Request request=new Request.Builder().url("http://1.116.114.32:18081/student/login").post(requestBody).build();
+        Call call=okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                Log.e("TAG","网络错误，登录失败");
+                Log.e("TAG","发送失败消息");
+                Log.e("TAG",e.getMessage());
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                Gson gson=new Gson();
+                String str=response.body().string();
+                LoginMessage data = gson.fromJson(str, LoginMessage.class);
+                Log.e("TAG","ResponseCode:"+response.code());
+                Log.e("TAG",data.getRspMsg());
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(data.getRspMsg().equals("操作成功")){
+                            Intent intent=new Intent(signinActivity.this,MainActivity.class);
+                            intent.putExtra("username",stuNo);
+                            signinActivity.this.finish();
+                            startActivity(intent);
+                        }else if(myid.isEmpty()){
+                            Toast.makeText(signinActivity.this,"请输入账号",Toast.LENGTH_SHORT).show();
+                        }else if(mypass.isEmpty()){
+                            Toast.makeText(signinActivity.this,"请输入密码",Toast.LENGTH_SHORT).show();
+                        } else
+                        {
+                            Toast.makeText(signinActivity.this,data.getRspMsg(),Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+            }
+        });
 
     }
     /*public class postTask extends AsyncTask{

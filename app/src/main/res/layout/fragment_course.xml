@@ -55,7 +55,7 @@
 
         <ListView
             android:id="@+id/stu_course"
-            android:layout_width="330dp"
+            android:layout_width="350dp"
             android:layout_height="294dp"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
