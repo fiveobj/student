@@ -59,6 +59,12 @@ private FragmentTransaction transaction;
         transaction=manager.beginTransaction();
         transaction.add(R.id.stucourse_layout,new recourseFragment());
         transaction.commit();
+
+        //对MainActivity中传进来的值判断
+        int id=getIntent().getIntExtra("id",0);
+        if(id==4){
+            getFragmentManager().beginTransaction().replace(R.id.stucourse_layout,new liveFragment()).addToBackStack(null).commit();
+        }
     }
     private void setListeners(){
         OnClick onClick=new OnClick();

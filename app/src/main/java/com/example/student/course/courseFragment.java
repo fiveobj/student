@@ -99,7 +99,6 @@ public class courseFragment extends android.app.Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=null;
                 intent=new Intent(getActivity(), stucourceActivity.class);
-
                 startActivity(intent);
 
             }
