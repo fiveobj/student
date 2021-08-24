@@ -64,6 +64,9 @@ private FragmentTransaction transaction;
         int id=getIntent().getIntExtra("id",0);
         if(id==4){
             getFragmentManager().beginTransaction().replace(R.id.stucourse_layout,new liveFragment()).addToBackStack(null).commit();
+            ResetImg();
+            live.setBackgroundResource(R.mipmap.stucourse_live1);
+            ltv.setTextColor(Color.parseColor("#1E90FF"));
         }
     }
     private void setListeners(){

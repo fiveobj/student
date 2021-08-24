@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+<ImageView
+    android:id="@+id/stuc_rec_parentitemIv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@mipmap/stuc_rec_parentitem"
+    android:layout_centerVertical="true"
+    android:paddingLeft="15dp"/>
+    <TextView
+        android:id="@+id/stuc_rec_parentitemtv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/stuc_rec_parentitemIv"
+        android:gravity="center_vertical"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:text="测试"
+        android:paddingLeft="10dp"
+        />
+    <ImageView
+        android:id="@+id/stuc_rec_parentitemmore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/stuc_rec_parentitemmore1"
+        android:layout_marginRight="30dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        />
+</RelativeLayout>

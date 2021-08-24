@@ -5,24 +5,180 @@
     android:layout_height="match_parent"
     tools:context=".course.videoFragment"
     android:background="#F0F0F0">
-    <VideoView
-        android:id="@+id/stucourse_recourse_videoview"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"/>
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="250dp"
+        >
+        <VideoView
+            android:id="@+id/stucourse_recourse_videoview"
+            android:layout_width="360dp"
+            android:layout_height="220dp"/>
+
+    </RelativeLayout>
+
+<LinearLayout
+    android:layout_width="340dp"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="270dp"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    >
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@+id/stucourse_recourse_videoview"
-        android:background="#565657">
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
         <ImageButton
-            android:id="@+id/stucourse_recourse_startImB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@mipmap/stuc_rec_start"
-            android:layout_marginLeft="20dp"
-            android:layout_gravity="center"/>
+            android:id="@+id/stuc_rec_videotab1"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/stuc_rec_video"
+            android:background="#00FFFFFF"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/stuc_rec_videotab1tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="java入门基础"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textColor="#565657"
+            android:textSize="15sp"/>
+
     </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/my_zhixian"
+        android:paddingLeft="46dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <ImageButton
+            android:id="@+id/stuc_rec_videotab2"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/stuc_rec_video"
+            android:background="#00FFFFFF"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/stuc_rec_videotab2tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="java入门基础"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textColor="#565657"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/my_zhixian"
+        android:paddingLeft="46dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <ImageButton
+            android:id="@+id/stuc_rec_videotab3"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/stuc_rec_video"
+            android:background="#00FFFFFF"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/stuc_rec_videotab3tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="java入门基础"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textColor="#565657"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/my_zhixian"
+        android:paddingLeft="46dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <ImageButton
+            android:id="@+id/stuc_rec_videotab4"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/stuc_rec_video"
+            android:background="#00FFFFFF"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/stuc_rec_videotab4tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="java入门基础"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textColor="#565657"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/my_zhixian"
+        android:paddingLeft="46dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+        <ImageButton
+            android:id="@+id/stuc_rec_videotab5"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/stuc_rec_video"
+            android:background="#00FFFFFF"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:id="@+id/stuc_rec_videotab5tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="java入门基础"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textColor="#565657"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/my_zhixian"
+        android:paddingLeft="46dp"/>
 
 
+</LinearLayout>
 
 </RelativeLayout>

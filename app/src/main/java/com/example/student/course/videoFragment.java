@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.MediaController;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.example.student.R;
@@ -35,6 +36,7 @@ public class videoFragment extends android.app.Fragment {
 
     //----------------------------------------------------------------------------------------------
     private VideoView mvideoView;
+    private TextView starttv;
     private ImageButton startimb;
     MediaController mMediaController;
 
@@ -77,19 +79,22 @@ public class videoFragment extends android.app.Fragment {
         mvideoView=new VideoView(getActivity());
         mvideoView=(VideoView)view.findViewById(R.id.stucourse_recourse_videoview);
         mMediaController=new MediaController(getActivity());
-        startimb=(ImageButton)view.findViewById(R.id.stucourse_recourse_startImB);
-        startimb.setOnClickListener(new OnClick());
+        starttv=(TextView)view.findViewById(R.id.stuc_rec_videotab1tv);
+        startimb=(ImageButton)view.findViewById(R.id.stuc_rec_videotab1);
+        starttv.setOnClickListener(new OnClick());
         return view;
     }
     public class OnClick implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
+
             String url="android.resource://"+"com.example.student"+"/"+R.raw.ces;
             mvideoView.setVideoURI(Uri.parse(url));
+            startimb.setImageResource(R.mipmap.stuc_rec_play);
             mMediaController.setMediaPlayer(mvideoView);
             mvideoView.setMediaController(mMediaController);
-            if(v==startimb){
+            if(v==starttv){
                 mvideoView.start();
             }
 

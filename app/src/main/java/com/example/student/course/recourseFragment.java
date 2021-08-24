@@ -76,13 +76,12 @@ public class recourseFragment extends android.app.Fragment {
         video=(TextView)view.findViewById(R.id.stucourse_recourse_video);
         document=(TextView)view.findViewById(R.id.stucourse_recourse_document);
 
-        video.setTextColor(Color.parseColor("#1E90FF"));
-
         //设置默认显示页面为主页
         manager=getFragmentManager();
         transaction=manager.beginTransaction();
         transaction.add(R.id.stucourse_recourselayout,new videoFragment());
         transaction.commit();
+        video.setTextColor(Color.parseColor("#1E90FF"));
 
         //设置监听事件
         setListener();
@@ -105,17 +104,17 @@ public class recourseFragment extends android.app.Fragment {
             transaction=manager.beginTransaction();
             switch (v.getId()){
                 case R.id.stucourse_recourse_video:
-                    transaction.add(R.id.stucourse_recourselayout,new videoFragment());
+                    transaction.replace(R.id.stucourse_recourselayout,new videoFragment());
                     video.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 case R.id.stucourse_recourse_document:
-                    transaction.add(R.id.stucourse_recourselayout,new documentFragment());
+                    transaction.replace(R.id.stucourse_recourselayout,new documentFragment());
                     document.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 default:
                     break;
             }
-
+            transaction.commit();
         }
     }
     public void ResetImg(){
