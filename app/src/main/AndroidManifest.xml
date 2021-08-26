@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Student"
         android:usesCleartextTraffic="true">
-        <activity android:name=".course.informActivity"></activity>
+        <activity android:name=".course.jobsubmitActivity"></activity>
+        <activity android:name=".course.informActivity" />
         <activity android:name=".course.discussActivity" />
         <activity android:name=".my.myattActivity" />
         <activity android:name=".my.myresumeActivity" />

@@ -99,7 +99,7 @@ public class ContactsFragment extends android.app.Fragment {
         //设置显示默认界面
         manager=getFragmentManager();
         transaction=manager.beginTransaction();
-        transaction.add(R.id.new_layout,new newsFragment());
+        transaction.add(R.id.new_layout,new newFragment());
         transaction.commit();
 
         return view;
@@ -123,7 +123,7 @@ public class ContactsFragment extends android.app.Fragment {
             transaction=manager.beginTransaction();
             switch (v.getId()){
                 case R.id.new_new:
-                    transaction.replace(R.id.new_layout,new newsFragment());
+                    transaction.replace(R.id.new_layout,new newFragment());
                     news.setBackgroundResource(R.mipmap.new_new1);
                     newtv.setTextColor(Color.parseColor("#1E90FF"));
                     break;

@@ -15,7 +15,7 @@ import com.example.student.R;
  * Use the {@link newFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class newFragment extends Fragment {
+public class newFragment extends android.app.Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
