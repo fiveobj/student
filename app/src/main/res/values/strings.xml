@@ -2,4 +2,6 @@
     <string name="app_name">Student</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="agora_app_id">4bfa8a45369b409f979f6de2bf4df3c8</string>
 </resources>

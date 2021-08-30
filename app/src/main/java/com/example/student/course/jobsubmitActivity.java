@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -12,6 +13,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.student.R;
 import com.example.student.customclass.UpLoadBean;
+import com.example.student.signinActivity;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -35,17 +38,37 @@ import okhttp3.Response;
 
 public class jobsubmitActivity extends AppCompatActivity {
 
-    private ImageButton santfile,santbtn;
+    private ImageButton santfile,santbtn,back;
     private TextView filename;
     private ImageView fileimv;
+    private EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jobsubmit);
 
-        /*initView();
+        initView();
 
-        santfile.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(jobsubmitActivity.this,stucourceActivity.class);
+                intent.putExtra("id",3);
+                startActivity(intent);
+            }
+        });
+
+        santbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(TextUtils.isEmpty(editText.getText())){
+                    Toast.makeText(jobsubmitActivity.this,"请输入答案",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(jobsubmitActivity.this,"提交成功",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+       /* santfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkPermission();//检查危险权限
@@ -53,14 +76,20 @@ public class jobsubmitActivity extends AppCompatActivity {
         });*/
     }
 
-    /*private void initView() {
+    private void initView() {
         santfile = (ImageButton) findViewById(R.id.santjob);
         santbtn = (ImageButton) findViewById(R.id.job_santbtn);
         filename = (TextView) findViewById(R.id.santjobtv);
         fileimv = (ImageView) findViewById(R.id.santjobimv);
+        back=(ImageButton) findViewById(R.id.jobsubmit_back);
+        editText=(EditText)findViewById(R.id.answer_edit);
+        //setListeners();
     }
 
-    private void checkPermission() {
+    private void setListeners(){
+
+    }
+    /*private void checkPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED){
             try {
                 upLodeFile();

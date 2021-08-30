@@ -68,6 +68,12 @@ private FragmentTransaction transaction;
             live.setBackgroundResource(R.mipmap.stucourse_live1);
             ltv.setTextColor(Color.parseColor("#1E90FF"));
         }
+        if(id==3){
+            getFragmentManager().beginTransaction().replace(R.id.stucourse_layout,new jobFragment()).addToBackStack(null).commit();
+            ResetImg();
+            job.setImageResource(R.mipmap.stucourse_job1);
+            jtv.setTextColor(Color.parseColor("#1E90FF"));
+        }
     }
     private void setListeners(){
         OnClick onClick=new OnClick();

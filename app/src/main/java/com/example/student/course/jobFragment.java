@@ -1,5 +1,6 @@
 package com.example.student.course;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.student.R;
@@ -101,6 +103,37 @@ public class jobFragment extends android.app.Fragment {
 
         list1.setAdapter(adapter1);
         list2.setAdapter(adapter2);
+
+
+        list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=null;
+                switch (position){
+                    case 0:
+                        intent=new Intent(getActivity(),jobsubmitActivity.class);
+                        break;
+                    default:
+                        break;
+                }
+                startActivity(intent);
+            }
+        });
+
+        list2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=null;
+                switch (position){
+                    case 0:
+                        intent=new Intent(getActivity(),jobsubmitActivity.class);
+                        break;
+                    default:
+                        break;
+                }
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
