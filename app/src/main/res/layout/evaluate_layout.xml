@@ -2,12 +2,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RatingBar
+        android:id="@+id/evaluate_ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.RatingBar"
+        android:progressTint="#FF7A2A"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:numStars="5"
+        android:stepSize="0.5">
+    </RatingBar>
     <EditText
         android:id="@+id/evaluate_edit"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:hint="请在这里输入你的课程评价"
         android:background="@mipmap/jobdit"
         android:paddingLeft="10dp"
@@ -19,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="315dp"
         android:background="#00FFFFFF"
         android:scaleType="fitXY"
         android:src="@mipmap/login_login_backg" />
@@ -27,7 +38,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="242dp"
+        android:layout_marginTop="327dp"
         android:layout_centerHorizontal="true"
         android:text="提     交"
         android:textSize="15sp"

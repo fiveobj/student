@@ -13,6 +13,18 @@
         android:layout_height="64dp"
         android:background="#FFFFFF">
 
+        <AutoCompleteTextView
+            android:id="@+id/course_searchauto"
+            android:layout_width="212dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="29dp"
+            android:background="@mipmap/course_searchback"
+            android:paddingLeft="10dp"
+            android:textSize="15sp">
+
+        </AutoCompleteTextView>
+
         <ImageButton
             android:id="@+id/course_search"
             android:layout_width="40dp"

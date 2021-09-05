@@ -9,10 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.example.student.R;
+import com.example.student.customclass.addclassDialog;
 import com.example.student.customclass.recomCourseAdapter;
 import com.example.student.customclass.recomCourseListViewItem;
 import com.example.student.customclass.stuCourseAdapter;
@@ -37,7 +42,14 @@ public class courseFragment extends android.app.Fragment {
     private String mParam1;
     private String mParam2;
 
-
+    private ImageButton coureseadd;
+    private ImageButton search;
+    private AutoCompleteTextView autoCompleteTextView;
+    private String[] normlString=new String[]{
+            "Java","Java 编程思想","Java从入门到精通","Java 教程","Java 全套教程","Java 实训课程",
+            "Java 实训速成课"
+    };
+    private ArrayAdapter<String> arrayAdapter;
     //-------------------------------------在学课程--------------------------------------------
 
     private ListView stucourselistv;
@@ -114,12 +126,52 @@ public class courseFragment extends android.app.Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=null;
-                intent=new Intent(getActivity(), stucourceActivity.class);
+                intent=new Intent(getActivity(), recourse_detail_Activity.class);
 
                 startActivity(intent);
             }
         });
-        // Inflate the layout for this fragment
+
+
+        //添加课程
+        coureseadd=view.findViewById(R.id.course_add);
+        coureseadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addclassDialog addclassDialog=new addclassDialog(getActivity());
+                addclassDialog.setSubmit(new addclassDialog.IOnCanceListener() {
+                    @Override
+                    public void onCancel(com.example.student.customclass.addclassDialog dialog) {
+                        Toast.makeText(getActivity(),"添加成功",Toast.LENGTH_SHORT).show();
+                        stulist=getstuDataone();
+                        stuadapter=new stuCourseAdapter(getActivity(),R.layout.stucourseitem,stulist);
+                        stucourselistv.setAdapter(stuadapter);
+                    }
+                });
+                addclassDialog.show();
+            }
+        });
+
+
+        //搜索课程
+        search=view.findViewById(R.id.course_search);
+        autoCompleteTextView=view.findViewById(R.id.course_searchauto);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),searchActivity.class);
+                intent.putExtra("search",autoCompleteTextView.getText());
+                startActivity(intent);
+            }
+        });
+
+        //实现一个适配器对象，用来给自动输入框添加自动装入内容
+        arrayAdapter=new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line,normlString);
+        //给自动完成输入框添加内容适配器
+        autoCompleteTextView.setAdapter(arrayAdapter);
+
+
         return view;
     }
 
@@ -132,6 +184,15 @@ public class courseFragment extends android.app.Fragment {
         return list;
     }
 
+    public List<stuCourseListViewItem> getstuDataone(){
+        List<stuCourseListViewItem> list=new ArrayList<stuCourseListViewItem>();
+
+        list.add(new stuCourseListViewItem("JAVA实训","张三",R.mipmap.contacts));
+        list.add(new stuCourseListViewItem("Web实训","李四",R.mipmap.contacts));
+        list.add(new stuCourseListViewItem("python实训","王五",R.mipmap.contacts));
+        list.add(new stuCourseListViewItem("C#实训","黑六",R.mipmap.contacts));
+        return list;
+    }
     public List<recomCourseListViewItem>getrecomData(){
         List<recomCourseListViewItem> list=new ArrayList<recomCourseListViewItem>();
 
