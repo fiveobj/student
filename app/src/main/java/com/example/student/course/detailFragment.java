@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.student.R;
+import com.example.student.customclass.evaluateDialog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +28,9 @@ public class detailFragment extends android.app.Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ImageButton evaluate;
+
 
     public detailFragment() {
         // Required empty public constructor
@@ -60,7 +66,25 @@ public class detailFragment extends android.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail, container, false);
+        View view=inflater.inflate(R.layout.fragment_detail, null);
+
+        evaluate=view.findViewById(R.id.evaluate_ib);
+
+        evaluate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                evaluateDialog dialog=new evaluateDialog(getActivity());
+                dialog.setText("131");
+                dialog.setSubmit(new evaluateDialog.IOnCanceListener() {
+                    @Override
+                    public void onCancel(evaluateDialog dialog) {
+                        Toast.makeText(getActivity(),"提交成功",Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+                dialog.show();
+            }
+        });
+        return view;
     }
 }

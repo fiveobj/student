@@ -108,13 +108,15 @@ public class documentFragment extends android.app.Fragment {
         expand.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
             @Override
             public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getActivity(),"折叠了--"+groupStrings[groupPosition],Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"折叠了--"+groupStrings[groupPosition],Toast.LENGTH_SHORT).show();
+
             }
         });
         expand.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
             @Override
             public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getActivity(),"展开了--"+groupStrings[groupPosition],Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(),"展开了--"+groupStrings[groupPosition],Toast.LENGTH_SHORT).show();
+
             }
         });
         return view;

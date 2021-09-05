@@ -26,6 +26,8 @@ private ImageButton back;
 private TextView retv,ntv,jtv,dtv,ltv;
 private FragmentManager manager;
 private FragmentTransaction transaction;
+
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,14 +69,23 @@ private FragmentTransaction transaction;
             ResetImg();
             live.setBackgroundResource(R.mipmap.stucourse_live1);
             ltv.setTextColor(Color.parseColor("#1E90FF"));
+
         }
         if(id==3){
             getFragmentManager().beginTransaction().replace(R.id.stucourse_layout,new jobFragment()).addToBackStack(null).commit();
             ResetImg();
-            job.setImageResource(R.mipmap.stucourse_job1);
+            job.setBackgroundResource(R.mipmap.stucourse_job1);
             jtv.setTextColor(Color.parseColor("#1E90FF"));
         }
+        if(id==2){
+            getFragmentManager().beginTransaction().replace(R.id.stucourse_layout,new newsFragment()).addToBackStack(null).commit();
+            ResetImg();
+            news.setBackgroundResource(R.mipmap.stucourse_new1);
+            ntv.setTextColor(Color.parseColor("#1E90FF"));
+        }
     }
+
+
     private void setListeners(){
         OnClick onClick=new OnClick();
         recourse.setOnClickListener(onClick);
@@ -84,6 +95,8 @@ private FragmentTransaction transaction;
         detail.setOnClickListener(onClick);
         back.setOnClickListener(onClick);
     }
+
+
     private class OnClick implements View.OnClickListener{
 
         @Override
@@ -120,8 +133,6 @@ private FragmentTransaction transaction;
                     Intent intent=new Intent(stucourceActivity.this,MainActivity.class);
                     intent.putExtra("id",1);
                     startActivity(intent);
-                    back.setBackgroundResource(R.mipmap.stucourse_detail1);
-                    dtv.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 default:
                     break;
@@ -129,6 +140,8 @@ private FragmentTransaction transaction;
             transaction.commit();
         }
     }
+
+
     private void ResetImg(){
         recourse.setBackgroundResource(R.mipmap.stucourse_resource);
         news.setBackgroundResource(R.mipmap.stucourse_new);
