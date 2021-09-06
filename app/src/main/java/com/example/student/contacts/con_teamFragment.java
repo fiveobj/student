@@ -19,10 +19,10 @@ import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link teamFragment#newInstance} factory method to
+ * Use the {@link con_teamFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class teamFragment extends android.app.Fragment {
+public class con_teamFragment extends android.app.Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,12 +37,11 @@ public class teamFragment extends android.app.Fragment {
     private ListView listView;
 
     private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-    int[] imageId = new int[]{R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo};
-    String[] title = new String[]{"刘一", "陈二", "张三", "李四", "王五", "赵六", "孙七"};
+    int[] imageId = new int[]{R.mipmap.logo, R.mipmap.logo};
+    String[] title = new String[]{"省赛7对", "群聊2"};
 
 
-
-    public teamFragment() {
+    public con_teamFragment() {
         // Required empty public constructor
     }
 
@@ -52,11 +51,11 @@ public class teamFragment extends android.app.Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment teamFragment.
+     * @return A new instance of fragment con_teamFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static teamFragment newInstance(String param1, String param2) {
-        teamFragment fragment = new teamFragment();
+    public static con_teamFragment newInstance(String param1, String param2) {
+        con_teamFragment fragment = new con_teamFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -76,17 +75,17 @@ public class teamFragment extends android.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_team, null);
+        View view=inflater.inflate(R.layout.fragment_con_team, null);
 
-        listView = (ListView) view.findViewById(R.id.people_team_tv);
+        listView = (ListView) view.findViewById(R.id.con_team_lv);
         list = getData();
         SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), list,
                 R.layout.new_peopleitemlayout, new String[]{"名字", "image"}, new int[]{
                 R.id.tv, R.id.image});
         listView.setAdapter(adapter);
+
         return view;
     }
-
     public List<Map<String, Object>> getData() {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
         for (int i = 0; i < imageId.length; i++) {

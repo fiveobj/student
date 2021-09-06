@@ -2,7 +2,6 @@ package com.example.student.course;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -14,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.student.R;
-import com.example.student.home.homeFragment;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -38,4 +38,6 @@ public class recomCourseAdapter extends ArrayAdapter<recomCourseListViewItem> {
 
         return view;
     }
+
+
 }

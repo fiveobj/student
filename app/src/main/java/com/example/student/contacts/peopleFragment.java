@@ -1,5 +1,8 @@
 package com.example.student.contacts;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +10,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.student.R;
+import com.example.student.course.documentFragment;
+import com.example.student.course.recourseFragment;
+import com.example.student.course.videoFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +32,13 @@ public class peopleFragment extends android.app.Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    private TextView people,team;
+    private FragmentManager manager;
+    private FragmentTransaction transaction;
+
+
 
     public peopleFragment() {
         // Required empty public constructor
@@ -60,7 +74,55 @@ public class peopleFragment extends android.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_people, container, false);
+
+        View view=inflater.inflate(R.layout.fragment_people, null);
+
+        people=(TextView)view.findViewById(R.id.contacts_people_p);
+        team=(TextView)view.findViewById(R.id.contacts_people_t);
+
+        //设置默认显示页面为主页
+        manager=getFragmentManager();
+        transaction=manager.beginTransaction();
+        transaction.add(R.id.contacts_peoplelayout,new con_peopleFragment());
+        transaction.commit();
+        people.setTextColor(Color.parseColor("#1E90FF"));
+
+        //设置监听事件
+        setListener();
+        return view;
+    }
+
+    public void setListener(){
+        OnClick onClick= new OnClick();
+        people.setOnClickListener(onClick);
+        team.setOnClickListener(onClick);
+
+    }
+
+    public class OnClick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            ResetImg();
+            transaction=manager.beginTransaction();
+            switch (v.getId()){
+                case R.id.contacts_people_p:
+                    transaction.replace(R.id.contacts_peoplelayout,new con_peopleFragment());
+                    people.setTextColor(Color.parseColor("#1E90FF"));
+                    break;
+                case R.id.contacts_people_t:
+                    transaction.replace(R.id.contacts_peoplelayout,new con_teamFragment());
+                    team.setTextColor(Color.parseColor("#1E90FF"));
+                    break;
+                default:
+                    break;
+            }
+            transaction.commit();
+        }
+
+    }
+    public void ResetImg(){
+        people.setTextColor(Color.parseColor("#565657"));
+        team.setTextColor(Color.parseColor("#565657"));
     }
 }

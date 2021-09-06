@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -115,6 +116,9 @@ public class courseFragment extends android.app.Fragment {
 
             }
         });
+        //动态设置高度
+
+        setstulistvhigh();
         //-------------------------------------推荐课程--------------------------------------------
 
         recomcourselistv=(ListView)view.findViewById(R.id.recom_course);
@@ -132,7 +136,7 @@ public class courseFragment extends android.app.Fragment {
             }
         });
 
-
+        setreclistvhigh();
         //添加课程
         coureseadd=view.findViewById(R.id.course_add);
         coureseadd.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +150,7 @@ public class courseFragment extends android.app.Fragment {
                         stulist=getstuDataone();
                         stuadapter=new stuCourseAdapter(getActivity(),R.layout.stucourseitem,stulist);
                         stucourselistv.setAdapter(stuadapter);
+                        setstulistvhigh();
                     }
                 });
                 addclassDialog.show();
@@ -201,5 +206,38 @@ public class courseFragment extends android.app.Fragment {
         list.add(new recomCourseListViewItem("web实训课程","该项目为纯前端典型电商项目，开发主要JavaScript基础的学习、DOM的操作、学子商城首页、学子商城404页面、学子商城收藏页、学子商城登录页、使用盒子模型和浮动，定位等知识点。",R.mipmap.contacts1));
 
         return list;
+    }
+
+    public void setstulistvhigh(){
+        ListAdapter listAdapter=stucourselistv.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, stucourselistv);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = stucourselistv.getLayoutParams();
+        params.height = totalHeight + (stucourselistv.getDividerHeight() * (listAdapter.getCount() - 1));
+        stucourselistv.setLayoutParams(params);
+    }
+
+
+    public void setreclistvhigh(){
+        ListAdapter listAdapter=recomcourselistv.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, recomcourselistv);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = recomcourselistv.getLayoutParams();
+        params.height = totalHeight + (recomcourselistv.getDividerHeight() * (listAdapter.getCount() - 1));
+        recomcourselistv.setLayoutParams(params);
     }
 }

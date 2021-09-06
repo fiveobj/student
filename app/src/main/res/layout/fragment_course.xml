@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -51,7 +51,8 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginTop="64dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -68,7 +69,7 @@
         <ListView
             android:id="@+id/stu_course"
             android:layout_width="350dp"
-            android:layout_height="294dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:divider="#FFF5F5F5"
@@ -85,7 +86,7 @@
         <ListView
             android:id="@+id/recom_course"
             android:layout_width="330dp"
-            android:layout_height="267dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="#FFFFFF"
@@ -97,4 +98,4 @@
 
 
 
-</LinearLayout>
+</RelativeLayout>

@@ -7,8 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import com.example.student.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +32,14 @@ public class newFragment extends android.app.Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    private ListView listView;
+
+    private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+    int[] imageId = new int[]{R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo};
+    String[] title = new String[]{"刘一", "陈二", "张三", "李四", "王五", "赵六", "孙七"};
+
 
     public newFragment() {
         // Required empty public constructor
@@ -60,7 +75,30 @@ public class newFragment extends android.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_new, null);
+
+        listView = (ListView) view.findViewById(R.id.mListView);
+        list = getData();
+        SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), list,
+                R.layout.new_peopleitemlayout, new String[]{"名字", "image"}, new int[]{
+                R.id.tv, R.id.image});
+        listView.setAdapter(adapter);
+
+
+        return view;
+    }
+
+    public List<Map<String, Object>> getData() {
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        for (int i = 0; i < imageId.length; i++) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("image", imageId[i]);
+            map.put("名字", title[i]);
+            list.add(map);
+        }
+        return list;
+
+
     }
 }
