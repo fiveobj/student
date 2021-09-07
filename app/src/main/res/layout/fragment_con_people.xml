@@ -17,15 +17,18 @@
         android:layout_marginTop="5dp"
         android:text="A"
         android:textColor="#000000"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:padding="10dp"/>
 
     <ListView
+        android:divider="#00FFFFFF"
         android:id="@+id/peo_a"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         />
     <TextView
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -35,12 +38,14 @@
         android:textSize="15sp" />
 
     <ListView
+        android:divider="#00FFFFFF"
         android:id="@+id/peo_b"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         />
     <TextView
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -50,6 +55,7 @@
         android:textSize="15sp" />
 
     <ListView
+        android:divider="#00FFFFFF"
         android:id="@+id/peo_c"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

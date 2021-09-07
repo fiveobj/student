@@ -1,5 +1,6 @@
 package com.example.student.contacts;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -97,17 +99,30 @@ public class con_peopleFragment extends android.app.Fragment {
         list3=getData3();
 
         SimpleAdapter adapter1 = new SimpleAdapter(this.getActivity(), list1,
-                R.layout.new_peopleitemlayout, new String[]{"名字", "image"}, new int[]{
+                R.layout.new_people_playout, new String[]{"名字", "image"}, new int[]{
                 R.id.tv, R.id.image});
         listView1.setAdapter(adapter1);
 
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent l1=null;
+                switch (position){
+                    case 0:
+                        l1=new Intent(getActivity(),people_introActivity.class);
+                        break;
+                }
+                startActivity(l1);
+            }
+        });
+
         SimpleAdapter adapter2 = new SimpleAdapter(this.getActivity(), list2,
-                R.layout.new_peopleitemlayout, new String[]{"名字", "image"}, new int[]{
+                R.layout.new_people_playout, new String[]{"名字", "image"}, new int[]{
                 R.id.tv, R.id.image});
         listView2.setAdapter(adapter2);
 
         SimpleAdapter adapter3 = new SimpleAdapter(this.getActivity(), list3,
-                R.layout.new_peopleitemlayout, new String[]{"名字", "image"}, new int[]{
+                R.layout.new_people_playout, new String[]{"名字", "image"}, new int[]{
                 R.id.tv, R.id.image});
         listView3.setAdapter(adapter3);
 

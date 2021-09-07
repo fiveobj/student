@@ -18,7 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Student"
         android:usesCleartextTraffic="true">
-        <activity android:name=".contacts.people_introActivity"></activity>
+        <activity android:name=".contacts.team_troActivity"></activity>
+        <activity android:name=".contacts.group_chatActivity" />
+        <activity android:name=".contacts.people_introActivity" />
         <activity android:name=".course.searchActivity" />
         <activity android:name=".course.recourse_detail_Activity" />
         <activity android:name=".course.jobsubmitActivity" />

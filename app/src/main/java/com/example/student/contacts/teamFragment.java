@@ -1,5 +1,6 @@
 package com.example.student.contacts;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -81,9 +83,24 @@ public class teamFragment extends android.app.Fragment {
         listView = (ListView) view.findViewById(R.id.people_team_tv);
         list = getData();
         SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), list,
-                R.layout.new_peopleitemlayout, new String[]{"名字", "image"}, new int[]{
+                R.layout.new_teamlayout3, new String[]{"名字", "image"}, new int[]{
                 R.id.tv, R.id.image});
         listView.setAdapter(adapter);
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent l1=null;
+                switch (position)
+                {
+                    case 0:
+                        l1=new Intent(getActivity(),team_troActivity.class);
+                        break;
+                }
+                startActivity(l1);
+            }
+        });
         return view;
     }
 

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".contacts.people_introActivity"
+    android:background="#F5F5F5">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:src="@mipmap/peo_introback"
+        android:scaleType="fitXY"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="70dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/peo_introback"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginTop="35dp"
+            android:src="@mipmap/group_chat_back"
+            android:scaleType="fitXY"
+            android:layout_centerHorizontal="true"/>
+        <com.example.student.customclass.RadiusImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/logo" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/team_name"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="40dp"
+            />
+        <TextView
+            android:layout_width="291dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="90dp"
+            android:text="团队名称"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="115dp"
+            android:layout_marginLeft="70dp"
+            android:text="努力向上团队"
+            android:textColor="#A0A0A2"
+            android:textSize="10sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/my_zhixian"
+            android:layout_marginTop="135dp"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/team_time"
+            android:layout_marginTop="138dp"
+            android:layout_marginLeft="40dp"
+            />
+        <TextView
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="140dp"
+            android:text="创建时间"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="165dp"
+            android:layout_marginLeft="70dp"
+            android:text="2020-7-31"
+            android:textColor="#A0A0A2"
+            android:textSize="10sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/my_zhixian"
+            android:layout_marginTop="185dp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/team_project"
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="40dp"
+            />
+
+        <TextView
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="190dp"
+            android:text="擅长项目"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="215dp"
+            android:layout_marginLeft="70dp"
+            android:text="①  安卓开发"
+            android:textColor="#A0A0A2"
+            android:textSize="10sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/my_zhixian"
+            android:layout_marginTop="235dp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/team_people"
+            android:layout_marginTop="240dp"
+            android:layout_marginLeft="40dp"
+            />
+        <TextView
+            android:layout_width="292dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="240dp"
+            android:text="成员"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="进行中的项目"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:layout_marginTop="343dp"
+            android:layout_marginLeft="40dp"
+            android:textStyle="bold"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="115dp"
+            android:layout_marginTop="370dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/group_chat_back1"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="390dp"
+            android:text="小区建筑改造工程"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="415dp"
+            android:src="@mipmap/team_project_newtenor"
+            android:layout_marginLeft="40dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最新进程："
+            android:layout_marginTop="415dp"
+            android:textSize="10dp"
+            android:layout_marginLeft="60dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="435dp"
+            android:src="@mipmap/team_project_newtime"
+            android:layout_marginLeft="40dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更新时间："
+            android:layout_marginTop="435dp"
+            android:textSize="10dp"
+            android:layout_marginLeft="60dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="往期项目"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:layout_marginTop="493dp"
+            android:layout_marginLeft="40dp"
+            android:textStyle="bold"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="105dp"
+            android:layout_marginTop="520dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/group_chat_back1"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="540dp"
+            android:text="小区建筑改造工程"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="560dp"
+          android:layout_marginLeft="40dp"
+          android:text="苏州"
+          android:textSize="10sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="580dp"
+            android:layout_marginLeft="40dp"
+            android:text="拟建"
+            android:textSize="10sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="580dp"
+            android:layout_marginLeft="80dp"
+            android:text="2021-07-31"
+            android:textSize="10sp"/>
+        <ImageButton
+            android:id="@+id/team_sea_eva"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="550dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitXY"
+            android:src="@mipmap/stulogin_codebtnback" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看评价"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="557dp"
+            android:layout_marginLeft="243dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="专利"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:layout_marginTop="633dp"
+            android:layout_marginLeft="40dp"
+            android:textStyle="bold"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="105dp"
+            android:layout_marginTop="660dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/group_chat_back1"
+            android:layout_centerHorizontal="true"/>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="成就"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:layout_marginTop="773dp"
+            android:layout_marginLeft="40dp"
+            android:textStyle="bold"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="105dp"
+            android:layout_marginTop="800dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/group_chat_back1"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/team_delectbtn"
+            android:layout_marginTop="900dp"
+            android:background="#00FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="解散团队"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="927dp"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+
+
+</ScrollView>
+
+
+
+    <ImageButton
+        android:id="@+id/people_intro_back"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="28dp"
+        android:background="@mipmap/stucourse_back" />
+
+
+
+</RelativeLayout>

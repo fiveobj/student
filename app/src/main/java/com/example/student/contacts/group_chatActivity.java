@@ -10,13 +10,13 @@ import android.view.View;
 
 import com.example.student.R;
 
-public class people_introActivity extends AppCompatActivity {
+public class group_chatActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_people_intro);
+        setContentView(R.layout.activity_group_chat);
 
         //设置顶部状态栏为透明
         getWindow().setStatusBarColor(Color.TRANSPARENT);

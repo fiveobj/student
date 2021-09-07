@@ -39,7 +39,7 @@ public class newFragment extends android.app.Fragment {
     private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
     int[] imageId = new int[]{R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo};
     String[] title = new String[]{"刘一", "陈二", "张三", "李四", "王五", "赵六", "孙七"};
-
+    String[] detail=new String[]{"刘一：下次再说","陈二：下次一定","张三：明天见","[链接]邀请你加入群聊","我说好了，没事","还可以吧","那就这样"};
 
     public newFragment() {
         // Required empty public constructor
@@ -81,8 +81,8 @@ public class newFragment extends android.app.Fragment {
         listView = (ListView) view.findViewById(R.id.mListView);
         list = getData();
         SimpleAdapter adapter = new SimpleAdapter(this.getActivity(), list,
-                R.layout.new_peopleitemlayout, new String[]{"名字", "image"}, new int[]{
-                R.id.tv, R.id.image});
+                R.layout.new_peopleitemlayout, new String[]{"名字", "image","内容"}, new int[]{
+                R.id.tv_name, R.id.image,R.id.tv_detail});
         listView.setAdapter(adapter);
 
 
@@ -95,6 +95,7 @@ public class newFragment extends android.app.Fragment {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("image", imageId[i]);
             map.put("名字", title[i]);
+            map.put("内容",detail[i]);
             list.add(map);
         }
         return list;
