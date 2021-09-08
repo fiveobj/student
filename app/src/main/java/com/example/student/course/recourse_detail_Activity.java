@@ -48,9 +48,7 @@ public class recourse_detail_Activity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(recourse_detail_Activity.this, MainActivity.class);
-                intent.putExtra("id",1);
-                startActivity(intent);
+               recourse_detail_Activity.this.finish();
             }
         });
     }

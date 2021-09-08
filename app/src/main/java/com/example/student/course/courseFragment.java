@@ -183,27 +183,28 @@ public class courseFragment extends android.app.Fragment {
     public List<stuCourseListViewItem> getstuData(){
         List<stuCourseListViewItem> list=new ArrayList<stuCourseListViewItem>();
 
-        list.add(new stuCourseListViewItem("JAVA实训","张三",R.mipmap.contacts));
-        list.add(new stuCourseListViewItem("Web实训","李四",R.mipmap.contacts));
-        list.add(new stuCourseListViewItem("python实训","王五",R.mipmap.contacts));
+        list.add(new stuCourseListViewItem("JAVA实训","张三",R.drawable.java));
+        list.add(new stuCourseListViewItem("Web实训","李四",R.drawable.webstorm));
+        list.add(new stuCourseListViewItem("python实训","王五",R.drawable.python));
         return list;
     }
 
     public List<stuCourseListViewItem> getstuDataone(){
         List<stuCourseListViewItem> list=new ArrayList<stuCourseListViewItem>();
 
-        list.add(new stuCourseListViewItem("JAVA实训","张三",R.mipmap.contacts));
-        list.add(new stuCourseListViewItem("Web实训","李四",R.mipmap.contacts));
-        list.add(new stuCourseListViewItem("python实训","王五",R.mipmap.contacts));
-        list.add(new stuCourseListViewItem("C#实训","黑六",R.mipmap.contacts));
+        list.add(new stuCourseListViewItem("JAVA实训","张三",R.drawable.java));
+        list.add(new stuCourseListViewItem("Web实训","李四",R.drawable.webstorm));
+        list.add(new stuCourseListViewItem("python实训","王五",R.drawable.python));
+        list.add(new stuCourseListViewItem("C#实训","黑六",R.drawable.c3));
         return list;
     }
     public List<recomCourseListViewItem>getrecomData(){
         List<recomCourseListViewItem> list=new ArrayList<recomCourseListViewItem>();
 
-        list.add(new recomCourseListViewItem("python进阶实训课程","本次实训主要学习数据的爬取以及数据的分析，利用requests模块去爬取数据，利用xpath模块解析数据，利用numpy创建数据结构，利用pandas模块分析数据，以及matplotlib对数据进行可视化。",R.mipmap.contacts1));
-        list.add(new recomCourseListViewItem("UI实训","授课内容上的设定，对于课程的内容上，结合学员基础情况而设定，以项目案例做驱动，提升软件操作技术和设计理论理念，学员更加有兴趣学习，增加学员对于课程的理解和认可，从而学有所获和兴趣引导，以小组最后完成项目汇报，锻炼了个人的设计参与氛围也锻炼了团队协作能力，增加了除了设计以外的沟通表达技能。",R.mipmap.contacts1));
-        list.add(new recomCourseListViewItem("web实训课程","该项目为纯前端典型电商项目，开发主要JavaScript基础的学习、DOM的操作、学子商城首页、学子商城404页面、学子商城收藏页、学子商城登录页、使用盒子模型和浮动，定位等知识点。",R.mipmap.contacts1));
+        list.add(new recomCourseListViewItem("python进阶实训课程","本次实训主要学习数据的爬取以及数据的分析，利用requests模块去爬取数据，利用xpath模块解析数据，利用numpy创建数据结构，利用pandas模块分析数据，以及matplotlib对数据进行可视化。",R.drawable.python1));
+        list.add(new recomCourseListViewItem("UI实训","授课内容上的设定，对于课程的内容上，结合学员基础情况而设定，以项目案例做驱动，提升软件操作技术和设计理论理念，学员更加有兴趣学习，增加学员对于课程的理解和认可，从而学有所获和兴趣引导，以小组最后完成项目汇报，锻炼了个人的设计参与氛围也锻炼了团队协作能力，增加了除了设计以外的沟通表达技能。",R.
+                drawable.ui));
+        list.add(new recomCourseListViewItem("web实训课程","该项目为纯前端典型电商项目，开发主要JavaScript基础的学习、DOM的操作、学子商城首页、学子商城404页面、学子商城收藏页、学子商城登录页、使用盒子模型和浮动，定位等知识点。",R.drawable.web));
 
         return list;
     }

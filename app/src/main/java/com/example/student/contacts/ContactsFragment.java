@@ -102,6 +102,9 @@ public class ContactsFragment extends android.app.Fragment {
         transaction.add(R.id.new_layout,new newFragment());
         transaction.commit();
 
+
+
+
         return view;
     }
 

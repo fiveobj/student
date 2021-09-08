@@ -60,9 +60,7 @@ public class jobsubmitActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(jobsubmitActivity.this,stucourceActivity.class);
-                intent.putExtra("id",3);
-                startActivity(intent);
+                jobsubmitActivity.this.finish();
             }
         });
 

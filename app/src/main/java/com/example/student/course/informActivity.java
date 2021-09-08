@@ -40,9 +40,7 @@ public class informActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(informActivity.this,stucourceActivity.class);
-                intent.putExtra("id",2);
-                startActivity(intent);
+                informActivity.this.finish();
             }
         });
 

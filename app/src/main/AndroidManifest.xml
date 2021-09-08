@@ -39,9 +39,9 @@
         <activity android:name=".my.myidActivity" />
         <activity android:name=".stuloginActivity" />
         <activity android:name=".loginselectActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".signinActivity" />
         <activity android:name=".course.stucourceActivity" />
-        <activity android:name=".signinActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

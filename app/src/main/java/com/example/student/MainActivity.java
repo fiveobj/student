@@ -58,17 +58,7 @@ private RelativeLayout lead;
         home.setBackgroundResource(R.mipmap.home1);
         tv_home.setTextColor(Color.parseColor("#1E90FF"));
 
-        int id=getIntent().getIntExtra("id",0);
-        if(id==1){
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.main_layout,new courseFragment())
-                    .addToBackStack(null)
-                    .commit();
-            ResetImg();
-            course.setBackgroundResource(R.mipmap.course1);
-            tv_course.setTextColor(Color.parseColor("#1E90FF"));
-        }
+
 
     }
     private void setListeners(){

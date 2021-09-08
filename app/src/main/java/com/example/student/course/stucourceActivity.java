@@ -62,27 +62,7 @@ private FragmentTransaction transaction;
         transaction.add(R.id.stucourse_layout,new recourseFragment());
         transaction.commit();
 
-        //对MainActivity中传进来的值判断
-        int id=getIntent().getIntExtra("id",0);
-        if(id==4){
-            getFragmentManager().beginTransaction().replace(R.id.stucourse_layout,new liveFragment()).addToBackStack(null).commit();
-            ResetImg();
-            live.setBackgroundResource(R.mipmap.stucourse_live1);
-            ltv.setTextColor(Color.parseColor("#1E90FF"));
 
-        }
-        if(id==3){
-            getFragmentManager().beginTransaction().replace(R.id.stucourse_layout,new jobFragment()).addToBackStack(null).commit();
-            ResetImg();
-            job.setBackgroundResource(R.mipmap.stucourse_job1);
-            jtv.setTextColor(Color.parseColor("#1E90FF"));
-        }
-        if(id==2){
-            getFragmentManager().beginTransaction().replace(R.id.stucourse_layout,new newsFragment()).addToBackStack(null).commit();
-            ResetImg();
-            news.setBackgroundResource(R.mipmap.stucourse_new1);
-            ntv.setTextColor(Color.parseColor("#1E90FF"));
-        }
     }
 
 
@@ -130,9 +110,7 @@ private FragmentTransaction transaction;
                     dtv.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 case R.id.stucourse_back:
-                    Intent intent=new Intent(stucourceActivity.this,MainActivity.class);
-                    intent.putExtra("id",1);
-                    startActivity(intent);
+                    stucourceActivity.this.finish();
                     break;
                 default:
                     break;

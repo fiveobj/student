@@ -344,7 +344,7 @@
 
 
     <ImageButton
-        android:id="@+id/people_intro_back"
+        android:id="@+id/team_intro_back"
         android:layout_width="27dp"
         android:layout_height="27dp"
         android:layout_alignParentStart="true"
