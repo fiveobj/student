@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_activated="true" android:drawable="@mipmap/stu_rec_vidio_back_sele"/>
+    <item android:drawable="@mipmap/stu_rec_vidio_back"/><!-- 默认颜色 -->
+
+</selector>

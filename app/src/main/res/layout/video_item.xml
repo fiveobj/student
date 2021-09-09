@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="45dp"
-    android:background="@drawable/stu_rec_elist_childselect"
+    android:layout_height="80dp"
+    android:background="@drawable/video_select"
+
     >
     <ImageView
-        android:id="@+id/stuc_rec_childitemIv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="44dp"
+        android:id="@+id/video_imag"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:src="@mipmap/stuc_rec_play"
         />
     <TextView
-        android:id="@+id/stuc_rec_childitemtv"
+        android:id="@+id/video_tv"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:paddingLeft="10dp"
-        android:gravity="center_vertical"
+        android:layout_marginTop="25dp"
         android:textSize="15sp"
         android:textColor="#000000"
         android:text="测试"

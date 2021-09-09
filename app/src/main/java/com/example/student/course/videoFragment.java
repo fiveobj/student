@@ -8,14 +8,21 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.MediaController;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.example.student.R;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -39,7 +46,8 @@ public class videoFragment extends android.app.Fragment {
     private TextView starttv;
     private ImageButton startimb;
     MediaController mMediaController;
-
+    private ListView listView;
+    private List<Map<String,Object>> list=new ArrayList<Map<String, Object>>();
     public videoFragment() {
         // Required empty public constructor
     }
@@ -79,25 +87,51 @@ public class videoFragment extends android.app.Fragment {
         mvideoView=new VideoView(getActivity());
         mvideoView=(VideoView)view.findViewById(R.id.stucourse_recourse_videoview);
         mMediaController=new MediaController(getActivity());
-        starttv=(TextView)view.findViewById(R.id.stuc_rec_videotab1tv);
-        startimb=(ImageButton)view.findViewById(R.id.stuc_rec_videotab1);
-        starttv.setOnClickListener(new OnClick());
+        listView=(ListView)view.findViewById(R.id.voide_listview);
+        list=getData();
+        SimpleAdapter adapter=new SimpleAdapter(this.getActivity(),list,R.layout.video_item,new String[]{"名字"},new int[]{R.id.video_tv});
+        listView.setAdapter(adapter);
+        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        String url="android.resource://"+"com.example.student"+"/"+R.raw.ces;
+                        mvideoView.setVideoURI(Uri.parse(url));
+                        mMediaController.setMediaPlayer(mvideoView);
+                        mvideoView.setMediaController(mMediaController);
+                        mvideoView.start();
+                }
+            }
+        });
         return view;
     }
-    public class OnClick implements View.OnClickListener{
+    /*public class OnClick implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
 
-            String url="android.resource://"+"com.example.student"+"/"+R.raw.ces;
-            mvideoView.setVideoURI(Uri.parse(url));
+
             startimb.setImageResource(R.mipmap.stuc_rec_play);
-            mMediaController.setMediaPlayer(mvideoView);
-            mvideoView.setMediaController(mMediaController);
+
             if(v==starttv){
-                mvideoView.start();
+
             }
 
         }
+    }*/
+
+    public List<Map<String,Object>> getData(){
+        List<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
+        Map<String,Object> map=new HashMap<String,Object>();
+        for (int i=0;i<=4;i++){
+            map.put("名字","第一章");
+            list.add(map);
+        }
+
+
+
+        return list;
     }
 }
