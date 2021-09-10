@@ -39,7 +39,7 @@ public class con_teamFragment extends android.app.Fragment {
     private ListView listView;
 
     private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-    int[] imageId = new int[]{R.mipmap.logo, R.mipmap.logo};
+    int[] imageId = new int[]{R.mipmap.toux10, R.mipmap.toux11};
     String[] title = new String[]{"省赛7对", "群聊2"};
 
 

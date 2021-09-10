@@ -50,8 +50,8 @@
 
         <ImageButton
             android:id="@+id/stucourse_recourse"
-            android:layout_width="21dp"
-            android:layout_height="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -74,8 +74,8 @@
             android:layout_marginTop="28dp"/>
         <ImageButton
             android:id="@+id/stucourse_new"
-            android:layout_width="21dp"
-            android:layout_height="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -98,8 +98,8 @@
             android:layout_marginTop="28dp"/>
         <ImageButton
             android:id="@+id/stucourse_job"
-            android:layout_width="19dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -122,8 +122,8 @@
             android:layout_marginTop="28dp"/>
         <ImageButton
             android:id="@+id/stucourse_live"
-            android:layout_width="22dp"
-            android:layout_height="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -146,8 +146,8 @@
             android:layout_marginTop="28dp"/>
         <ImageButton
             android:id="@+id/stucourse_detail"
-            android:layout_width="16dp"
-            android:layout_height="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"

@@ -40,17 +40,17 @@ public class con_peopleFragment extends android.app.Fragment {
     private ListView listView1;
 
     private List<Map<String, Object>> list1 = new ArrayList<Map<String, Object>>();
-    int[] imageId1 = new int[]{R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo};
+    int[] imageId1 = new int[]{R.mipmap.toux1, R.mipmap.toux2, R.mipmap.toux3, R.mipmap.toux4};
     String[] title1 = new String[]{"a", "aa", "ab", "abc"};
     private ListView listView2;
 
     private List<Map<String, Object>> list2 = new ArrayList<Map<String, Object>>();
-    int[] imageId2 = new int[]{R.mipmap.logo, R.mipmap.logo, R.mipmap.logo};
+    int[] imageId2 = new int[]{R.mipmap.toux5, R.mipmap.toux6, R.mipmap.toux7};
     String[] title2 = new String[]{"ba", "bc", "bz"};
     private ListView listView3;
 
     private List<Map<String, Object>> list3 = new ArrayList<Map<String, Object>>();
-    int[] imageId3 = new int[]{R.mipmap.logo, R.mipmap.logo};
+    int[] imageId3 = new int[]{R.mipmap.toux8, R.mipmap.toux9};
     String[] title3 = new String[]{"ca", "cc"};
 
 

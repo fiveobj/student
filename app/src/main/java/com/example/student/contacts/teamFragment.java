@@ -39,7 +39,7 @@ public class teamFragment extends android.app.Fragment {
     private ListView listView;
 
     private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-    int[] imageId = new int[]{R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo};
+    int[] imageId = new int[]{R.mipmap.toux4, R.mipmap.toux3, R.mipmap.toux6, R.mipmap.toux10, R.mipmap.toux1, R.mipmap.toux11, R.mipmap.toux8};
     String[] title = new String[]{"刘一", "陈二", "张三", "李四", "王五", "赵六", "孙七"};
 
 

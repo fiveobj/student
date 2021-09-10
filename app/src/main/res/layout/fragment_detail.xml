@@ -7,6 +7,13 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/detail_school"
+        android:layout_marginTop="16.5dp"
+        android:layout_marginLeft="15dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +22,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="45dp"/>
 <ImageView
     android:layout_width="match_parent"
     android:layout_height="35dp"
@@ -26,10 +33,17 @@
         android:layout_height="wrap_content"
         android:text="浙江理工大学"
         android:textSize="15sp"
-        android:textColor="#8E8E8F"
+        android:textColor="#000000"
+        android:textStyle="bold"
         android:layout_marginTop="55dp"
         android:layout_marginLeft="30dp"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/detail_teac"
+        android:layout_marginTop="92dp"
+        android:layout_marginLeft="15dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,14 +52,14 @@
         android:textColor="#000000"
         android:textStyle="bold"
         android:layout_marginTop="90dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="45dp"/>
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:src="@mipmap/my_tabback"
+        android:layout_height="180dp"
+        android:src="@mipmap/detail_back"
         android:scaleType="fitXY"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"/>
+        android:layout_marginTop="120dp"/>
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -56,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="张三"
-        android:textColor="#8E8E8F"
+        android:textColor="#000000"
         android:textSize="10sp"
         android:layout_marginTop="140dp"
         android:layout_marginLeft="70dp"/>
@@ -87,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="李四"
-        android:textColor="#8E8E8F"
+        android:textColor="#000000"
         android:textSize="10sp"
         android:layout_marginTop="190dp"
         android:layout_marginLeft="70dp"/>
@@ -118,7 +132,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="王五"
-        android:textColor="#8E8E8F"
+        android:textColor="#000000"
         android:textSize="10sp"
         android:layout_marginTop="240dp"
         android:layout_marginLeft="70dp"/>
@@ -131,7 +145,12 @@
         android:layout_marginTop="260dp"
         android:layout_marginLeft="70dp"/>
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/detail_course1"
+        android:layout_marginTop="302dp"
+        android:layout_marginLeft="15dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -140,12 +159,12 @@
         android:textColor="#000000"
         android:textStyle="bold"
         android:layout_marginTop="300dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="45dp"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:src="@mipmap/my_tabback"
+        android:src="@mipmap/detail_back"
         android:scaleType="fitXY"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="335dp"/>
@@ -159,7 +178,12 @@
         android:layout_marginLeft="30dp"/>
 
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/detail_course2"
+        android:layout_marginTop="452dp"
+        android:layout_marginLeft="15dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -168,14 +192,14 @@
         android:textColor="#000000"
         android:textStyle="bold"
         android:layout_marginTop="450dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="45dp"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginTop="485dp"
         android:layout_centerHorizontal="true"
-        android:background="@mipmap/my_tabback"/>
+        android:background="@mipmap/detail_back"/>
 
     <TextView
         android:layout_width="270dp"
@@ -223,6 +247,12 @@
         android:layout_marginTop="610dp"
         android:layout_marginLeft="30dp"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/detail_eva"
+        android:layout_marginTop="647dp"
+        android:layout_marginLeft="15dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -232,7 +262,7 @@
         android:textColor="#000000"
         android:textStyle="bold"
         android:layout_marginTop="645dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="45dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -278,9 +308,9 @@
         android:textColor="#FFFFFF"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="160dp"
         android:layout_marginTop="725dp"
-        android:background="#FFFFFF">
+        android:background="#FBF6EB">
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -321,9 +351,9 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="885dp"
-        android:background="#FFFFFF">
+        android:layout_height="160dp"
+        android:layout_marginTop="895dp"
+        android:background="#FBF6EB">
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"

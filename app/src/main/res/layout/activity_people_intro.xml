@@ -311,34 +311,46 @@
         android:background="@mipmap/stucourse_back" />
 
     <ImageButton
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:src="@mipmap/peo_intro_livebtn"
-        android:background="#00FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="670dp"
-        android:layout_marginLeft="25dp"/>
+        android:layout_marginBottom="10dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@mipmap/peo_intro_livebtn" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="音视频通话"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="65dp"
         android:layout_marginTop="686dp"
-        android:layout_marginLeft="60dp"/>
+        android:layout_marginBottom="33dp"
+        android:text="音视频通话" />
 
     <ImageButton
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="670dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginRight="35dp"
+        android:layout_marginBottom="10dp"
         android:background="#00FFFFFF"
+        android:scaleType="fitXY"
         android:src="@mipmap/peo_intro_newbtn" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="发消息"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="240dp"
         android:layout_marginTop="686dp"
-        android:layout_marginLeft="245dp"
-        android:textColor="#FFFFFF"/>
+        android:layout_marginBottom="33dp"
+        android:text="发消息"
+        android:textColor="#FFFFFF" />
 </RelativeLayout>

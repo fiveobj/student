@@ -126,7 +126,7 @@ public class jobFragment extends android.app.Fragment {
                 Intent intent=null;
                 switch (position){
                     case 0:
-                        intent=new Intent(getActivity(),jobsubmitActivity.class);
+                        intent=new Intent(getActivity(),ajobsubmintActivity.class);
                         break;
                     default:
                         break;

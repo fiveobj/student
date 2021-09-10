@@ -37,7 +37,7 @@ public class newFragment extends android.app.Fragment {
     private ListView listView;
 
     private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-    int[] imageId = new int[]{R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo, R.mipmap.logo};
+    int[] imageId = new int[]{R.mipmap.toux11, R.mipmap.toux1, R.mipmap.toux5, R.mipmap.toux10, R.mipmap.toux6, R.mipmap.toux3, R.mipmap.toux4};
     String[] title = new String[]{"刘一", "陈二", "张三", "李四", "王五", "赵六", "孙七"};
     String[] detail=new String[]{"刘一：下次再说","陈二：下次一定","张三：明天见","[链接]邀请你加入群聊","我说好了，没事","还可以吧","那就这样"};
 

@@ -21,3 +21,7 @@
 #-renamesourcefileattribute SourceFile
 
 #-keep class io.agora.**{*;}
+
+#-keepclasseswithmembers class * {
+#    public <init>(android.content.Context);
+#}
