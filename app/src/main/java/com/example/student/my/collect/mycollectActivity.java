@@ -1,4 +1,4 @@
-package com.example.student.my;
+package com.example.student.my.collect;
 
 import androidx.appcompat.app.AppCompatActivity;
 

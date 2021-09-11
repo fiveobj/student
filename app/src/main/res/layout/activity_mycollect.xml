@@ -1,9 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".my.mycollectActivity">
+    tools:context=".my.collect.mycollectActivity"
+    android:background="#F5F5F5">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#1E90FF">
+        <ImageButton
+            android:id="@+id/ajobsubmit_back"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="28dp"
+            android:background="@mipmap/stucourse_back" />
+        <TextView
+            android:id="@+id/jobsubmit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的收藏"
+            android:textSize="20sp"
+            android:textColor="#EFEFEF"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="28dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="65dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@mipmap/stucourse_tabback"
+            />
+        <ImageButton
+            android:id="@+id/collect_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/my_collect_job1"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="35dp"/>
+        <ImageButton
+            android:id="@+id/collect_pasttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/my_collect_pasttime1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="125dp"/>
+
+        <ImageButton
+            android:id="@+id/collect_fair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="216dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="125dp"
+            android:layout_marginRight="120dp"
+            android:src="@mipmap/my_collect_fair1" />
+
+        <ImageButton
+            android:id="@+id/collect_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="36dp"
+            android:src="@mipmap/my_collect_project1" />
+        <TextView
+            android:id="@+id/collect_jobtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="岗位"
+            android:textSize="10sp"
+            android:textColor="#696969"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="40dp"
+            />
+        <TextView
+            android:id="@+id/collect_pasttimetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="兼职"
+            android:textSize="10sp"
+            android:textColor="#696969"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="127dp"
+            />
+        <TextView
+            android:id="@+id/collect_fairtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="招聘会"
+            android:textSize="10sp"
+            android:textColor="#696969"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="208dp"
+            />
+        <TextView
+            android:id="@+id/collect_projecttv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="项目"
+            android:textSize="10sp"
+            android:textColor="#696969"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="303dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/collect_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="117dp"/>
+
+</RelativeLayout>

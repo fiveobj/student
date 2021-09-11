@@ -14,6 +14,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.example.student.R;
+import com.example.student.my.collect.mycollectActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -228,7 +229,7 @@ public class myFragment extends android.app.Fragment {
             Intent intent=null;
             switch (v.getId()){
                 case R.id.my_collect:
-                    intent=new Intent(getActivity(),mycollectActivity.class);
+                    intent=new Intent(getActivity(), mycollectActivity.class);
                     break;
                 case R.id.my_att:
                     intent=new Intent(getActivity(),myattActivity.class);

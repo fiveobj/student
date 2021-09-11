@@ -36,7 +36,7 @@
         <activity android:name=".my.mypostActivity" />
         <activity android:name=".my.myserviceActivity" />
         <activity android:name=".my.mycourseActivity" />
-        <activity android:name=".my.mycollectActivity" />
+        <activity android:name=".my.collect.mycollectActivity" />
         <activity android:name=".my.mysandActivity" />
         <activity android:name=".my.myidActivity" />
         <activity android:name=".stuloginActivity" />
