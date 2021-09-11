@@ -9,4 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="toumin">#00FFFFFF</color>
     <color name="huise">#E8E8F4</color>
+    <color name="content_background">#f2f2f2</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="solar_background">#009988</color>
+    <color name="line_color">#e7e7e7</color>
 </resources>
