@@ -7,15 +7,24 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.example.student.R;
+import com.example.student.my.collect.myclass.CollectFairAdapter;
+import com.example.student.my.collect.myclass.CollectFairItem;
+import com.example.student.my.collect.myclass.CollectPasttimeAdapter;
+import com.example.student.my.collect.myclass.CollectPasttimeItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link collect_pasttimeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class collect_pasttimeFragment extends Fragment {
+public class collect_pasttimeFragment extends android.app.Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +34,12 @@ public class collect_pasttimeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ListView pastlistview;
+    private CollectPasttimeAdapter adapter;
+    private List<CollectPasttimeItem> pastlist;
+
+
 
     public collect_pasttimeFragment() {
         // Required empty public constructor
@@ -60,7 +75,27 @@ public class collect_pasttimeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_collect_pasttime, container, false);
+        View view=inflater.inflate(R.layout.fragment_collect_pasttime, null);
+
+        pastlistview=(ListView)view.findViewById(R.id.con_pasttime_lv);
+        pastlist=getData();
+        adapter=new CollectPasttimeAdapter(this.getActivity(),R.layout.collectpasttime_itemlayout,pastlist);
+        pastlistview.setAdapter(adapter);
+        pastlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //兼职具体信息跳转
+
+
+            }
+        });
+        return view;
+    }
+
+    public List<CollectPasttimeItem> getData(){
+        List<CollectPasttimeItem> list=new ArrayList<CollectPasttimeItem>();
+
+        list.add(new CollectPasttimeItem("印象影视注册","3.5元/次","8月3日截止"));
+        return list;
     }
 }

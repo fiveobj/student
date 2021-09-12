@@ -7,15 +7,22 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.example.student.R;
+import com.example.student.my.collect.myclass.CollectFairAdapter;
+import com.example.student.my.collect.myclass.CollectFairItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link collect_fairFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class collect_fairFragment extends Fragment {
+public class collect_fairFragment extends android.app.Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +32,12 @@ public class collect_fairFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ListView fairlistview;
+    private CollectFairAdapter adapter;
+    private List<CollectFairItem> fairlist;
+
+
 
     public collect_fairFragment() {
         // Required empty public constructor
@@ -60,7 +73,28 @@ public class collect_fairFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_collect_fair, container, false);
+        View view=inflater.inflate(R.layout.fragment_collect_fair, null);
+
+        fairlistview=(ListView)view.findViewById(R.id.collect_fair_lv);
+        fairlist=getData();
+        adapter=new CollectFairAdapter(this.getActivity(),R.layout.collectfair_itemlayout,fairlist);
+        fairlistview.setAdapter(adapter);
+        fairlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //招聘会具体信息跳转
+
+            }
+        });
+
+        return view;
+    }
+
+
+    public List<CollectFairItem> getData(){
+        List<CollectFairItem> list=new ArrayList<CollectFairItem>();
+
+        list.add(new CollectFairItem("浙江广厦大学智能制造学院","时间：2021.06.07",R.mipmap.fair_img));
+        return list;
     }
 }

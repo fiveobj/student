@@ -53,11 +53,12 @@
         android:layout_marginLeft="80dp"
         />
    <ImageView
-       android:id="@+id/job_imv"
+       android:id="@+id/collect_job_imv"
        android:layout_width="24dp"
        android:layout_height="24dp"
        android:layout_marginTop="80dp"
        android:layout_marginLeft="30dp"
+       android:scaleType="fitXY"
        />
     <TextView
         android:id="@+id/job_compeny_name"

@@ -7,15 +7,24 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.example.student.R;
+import com.example.student.my.collect.myclass.CollectFairAdapter;
+import com.example.student.my.collect.myclass.CollectFairItem;
+import com.example.student.my.collect.myclass.CollectProjectAdapter;
+import com.example.student.my.collect.myclass.CollectProjectItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link collect_projectFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class collect_projectFragment extends Fragment {
+public class collect_projectFragment extends android.app.Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +34,12 @@ public class collect_projectFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ListView projectlistview;
+    private CollectProjectAdapter adapter;
+    private List<CollectProjectItem> projectlist;
+
+
 
     public collect_projectFragment() {
         // Required empty public constructor
@@ -60,7 +75,27 @@ public class collect_projectFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_collect_project, container, false);
+        View view=inflater.inflate(R.layout.fragment_collect_project, container, false);
+
+        projectlistview=(ListView)view.findViewById(R.id.con_project_lv);
+        projectlist=getData();
+        adapter=new CollectProjectAdapter(this.getActivity(),R.layout.collectproject_itemlayout,projectlist);
+        projectlistview.setAdapter(adapter);
+        projectlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //项目具体信息跳转
+
+
+            }
+        });
+        return view;
+    }
+
+    public List<CollectProjectItem> getData(){
+        List<CollectProjectItem> list=new ArrayList<CollectProjectItem>();
+
+        list.add(new CollectProjectItem("小区改造工程","苏州","拟建","2021-07-21"));
+        return list;
     }
 }

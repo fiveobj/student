@@ -40,7 +40,7 @@ public class CollectJobAdapter extends ArrayAdapter<CollectJobItem> {
         TextView company_level=view.findViewById(R.id.job_compeny_level);
         TextView company_peo=view.findViewById(R.id.job_compeny_peo);
         TextView money=view.findViewById(R.id.job_money);
-        ImageView image=view.findViewById(R.id.job_imv);
+        ImageView image=view.findViewById(R.id.collect_job_imv);
 
         job_level.setText(collectJobItem.getJob_level());
         where.setText(collectJobItem.getWhere());
@@ -51,6 +51,7 @@ public class CollectJobAdapter extends ArrayAdapter<CollectJobItem> {
         company_name.setText(collectJobItem.getCompany_name());
         company_peo.setText(collectJobItem.getCompany_peo());
         money.setText(collectJobItem.getMoney());
+        image.setImageResource(collectJobItem.getCom_img());
 
         return view;
     }

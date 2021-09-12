@@ -9,7 +9,6 @@
         android:divider="#00FFFFFF"
         android:id="@+id/con_pasttime_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="match_parent"/>
 
 </FrameLayout>
