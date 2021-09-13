@@ -15,12 +15,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.student.R;
-import com.example.student.course.recourseFragment;
-import com.example.student.my.collect.myclass.CollectFairAdapter;
-import com.example.student.my.collect.collect_jobFragment;
-import com.example.student.my.collect.collect_fairFragment;
-import com.example.student.my.collect.collect_pasttimeFragment;
-import com.example.student.my.collect.collect_projectFragment;
 
 
 public class mycollectActivity extends AppCompatActivity {

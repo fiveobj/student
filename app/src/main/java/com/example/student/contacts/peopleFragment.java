@@ -13,9 +13,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.student.R;
-import com.example.student.course.documentFragment;
-import com.example.student.course.recourseFragment;
-import com.example.student.course.videoFragment;
 
 /**
  * A simple {@link Fragment} subclass.

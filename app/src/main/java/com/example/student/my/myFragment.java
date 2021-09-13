@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.example.student.R;
 import com.example.student.my.collect.mycollectActivity;
+import com.example.student.my.myatt.myattActivity;
+import com.example.student.my.resume.myresumeActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -232,10 +234,10 @@ public class myFragment extends android.app.Fragment {
                     intent=new Intent(getActivity(), mycollectActivity.class);
                     break;
                 case R.id.my_att:
-                    intent=new Intent(getActivity(),myattActivity.class);
+                    intent=new Intent(getActivity(), myattActivity.class);
                     break;
                 case R.id.my_resume:
-                    intent=new Intent(getActivity(),myresumeActivity.class);
+                    intent=new Intent(getActivity(), myresumeActivity.class);
                     break;
                 default:
                     break;

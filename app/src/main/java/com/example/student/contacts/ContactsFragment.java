@@ -14,10 +14,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.student.R;
-import com.example.student.course.detailFragment;
-import com.example.student.course.jobFragment;
-import com.example.student.course.liveFragment;
-import com.example.student.course.newsFragment;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.example.student.customclass.RadiusImageView
+        android:layout_marginLeft="15dp"
+        android:id="@+id/myatt_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/myatt_name"
+        android:layout_marginLeft="85dp"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:textColor="#000000"/>
+
+    <ImageView
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="85dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/my_zhixian"/>
+
+    <ImageButton
+        android:id="@+id/myatt_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="271dp"
+        android:src="@mipmap/myatt_btn"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="已关注"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="280dp"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>

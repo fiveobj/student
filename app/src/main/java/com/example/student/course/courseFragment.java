@@ -18,11 +18,12 @@ import android.widget.Toast;
 
 
 import com.example.student.R;
-import com.example.student.customclass.addclassDialog;
-import com.example.student.customclass.recomCourseAdapter;
-import com.example.student.customclass.recomCourseListViewItem;
-import com.example.student.customclass.stuCourseAdapter;
-import com.example.student.customclass.stuCourseListViewItem;
+import com.example.student.course.rec.recourse_detail_Activity;
+import com.example.student.course.rec.recomCourseAdapter;
+import com.example.student.course.rec.recomCourseListViewItem;
+import com.example.student.course.stucourse.stucourceActivity;
+import com.example.student.course.stucourse.stuCourseAdapter;
+import com.example.student.course.stucourse.stuCourseListViewItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -145,7 +146,7 @@ public class courseFragment extends android.app.Fragment {
                 addclassDialog addclassDialog=new addclassDialog(getActivity());
                 addclassDialog.setSubmit(new addclassDialog.IOnCanceListener() {
                     @Override
-                    public void onCancel(com.example.student.customclass.addclassDialog dialog) {
+                    public void onCancel(com.example.student.course.addclassDialog dialog) {
                         Toast.makeText(getActivity(),"添加成功",Toast.LENGTH_SHORT).show();
                         stulist=getstuDataone();
                         stuadapter=new stuCourseAdapter(getActivity(),R.layout.stucourseitem,stulist);

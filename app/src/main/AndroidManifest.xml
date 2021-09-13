@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.student">
+
+    <uses-sdk tools:overrideLibrary="com.xuexiang.xui" />
     <!-- 允许程序连接网络 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许程序录制音频 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 允许程序使用照相设备 -->
@@ -10,7 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许对存储空间进行读写 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许程序连接到已配对的蓝牙设备 -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-sdk tools:overrideLibrary="com.xuexiang.xui"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,17 +21,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Student"
         android:usesCleartextTraffic="true">
-        <activity android:name=".course.ajobsubmintActivity"></activity>
+        <activity android:name=".my.resume.people_resume_changeActivity"></activity>
+        <activity android:name=".my.resume.team_resumeActivity" />
+        <activity android:name=".my.resume.people_resumeActivity" />
+        <activity android:name=".course.job.ajobsubmintActivity" />
         <activity android:name=".contacts.team_troActivity" />
         <activity android:name=".contacts.group_chatActivity" />
         <activity android:name=".contacts.people_introActivity" />
         <activity android:name=".course.searchActivity" />
-        <activity android:name=".course.recourse_detail_Activity" />
-        <activity android:name=".course.jobsubmitActivity" />
-        <activity android:name=".course.informActivity" />
-        <activity android:name=".course.discussActivity" />
-        <activity android:name=".my.myattActivity" />
-        <activity android:name=".my.myresumeActivity" />
+        <activity android:name=".course.rec.recourse_detail_Activity" />
+        <activity android:name=".course.job.jobsubmitActivity" />
+        <activity android:name=".course.news.informActivity" />
+        <activity android:name=".course.news.discussActivity" />
+        <activity android:name=".my.myatt.myattActivity" />
+        <activity android:name=".my.resume.myresumeActivity" />
         <activity android:name=".my.myexpActivity" />
         <activity android:name=".my.myaccountActivity" />
         <activity android:name=".my.mysetActivity" />
@@ -42,7 +47,7 @@
         <activity android:name=".stuloginActivity" />
         <activity android:name=".loginselectActivity" />
         <activity android:name=".signinActivity" />
-        <activity android:name=".course.stucourceActivity" />
+        <activity android:name=".course.stucourse.stucourceActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
