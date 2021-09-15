@@ -36,7 +36,10 @@
         <activity android:name=".my.myatt.myattActivity" />
         <activity android:name=".my.resume.myresumeActivity" />
         <activity android:name=".my.myexpActivity" />
-        <activity android:name=".my.myaccountActivity" />
+        <activity android:name=".my.account.myaccountActivity"
+           >
+
+        </activity>
         <activity android:name=".my.mysetActivity" />
         <activity android:name=".my.mypostActivity" />
         <activity android:name=".my.myserviceActivity" />

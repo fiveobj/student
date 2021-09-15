@@ -8,29 +8,48 @@
         android:id="@+id/image"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginLeft="37dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginTop="9dp"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp" />
+
     <TextView
         android:id="@+id/tv"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="9dp"
         android:textColor="#000000"
-        android:textSize="12sp"
-        />
+        android:textSize="15sp" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/my_inter"
-        android:layout_marginLeft="319dp"
-        android:layout_marginTop="12dp"/>
-        <ImageView
-            android:layout_width="284dp"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/my_zhixian"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="40dp"
-            />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="350dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="51dp"
+        android:src="@mipmap/my_inter" />
+
+    <ImageView
+        android:layout_width="330dp"
+        android:scaleType="fitXY"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="48dp"
+        android:src="@mipmap/my_zhixian" />
 </RelativeLayout>

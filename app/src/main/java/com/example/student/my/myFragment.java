@@ -9,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.example.student.R;
+import com.example.student.my.account.myaccountActivity;
 import com.example.student.my.collect.mycollectActivity;
 import com.example.student.my.myatt.myattActivity;
 import com.example.student.my.resume.myresumeActivity;
@@ -126,7 +128,7 @@ public class myFragment extends android.app.Fragment {
                         l1=new Intent(getActivity(),myidActivity.class);
                         break;
                     case 1:
-                        l1=new Intent(getActivity(),myaccountActivity.class);
+                        l1=new Intent(getActivity(), myaccountActivity.class);
                         break;
                     default:
                         break;
@@ -134,7 +136,7 @@ public class myFragment extends android.app.Fragment {
                 startActivity(l1);
             }
         });
-
+        setlistvhigh1();
 
 
         //mylistview2点击事件
@@ -163,7 +165,7 @@ public class myFragment extends android.app.Fragment {
             }
         });
 
-
+        setlistvhigh2();
         //mylistview3点击事件
         mylistView3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -182,6 +184,8 @@ public class myFragment extends android.app.Fragment {
                 startActivity(l3);
             }
         });
+
+        setlistvhigh3();
         return view;
     }
     public List<Map<String,Object>> getData1(){
@@ -244,5 +248,54 @@ public class myFragment extends android.app.Fragment {
             }
             startActivity(intent);
         }
+    }
+
+    public void setlistvhigh1(){
+        ListAdapter listAdapter=mylistView1.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, mylistView1);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = mylistView1.getLayoutParams();
+        params.height = totalHeight + (mylistView1.getDividerHeight() * (listAdapter.getCount() - 1));
+        mylistView1.setLayoutParams(params);
+    }
+
+    public void setlistvhigh2(){
+        ListAdapter listAdapter=mylistView2.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, mylistView2);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = mylistView2.getLayoutParams();
+        params.height = totalHeight + (mylistView2.getDividerHeight() * (listAdapter.getCount() - 1));
+        mylistView2.setLayoutParams(params);
+    }
+
+
+    public void setlistvhigh3(){
+        ListAdapter listAdapter=mylistView3.getAdapter();
+        if (listAdapter == null) {
+            return;
+        }
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, mylistView3);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = mylistView3.getLayoutParams();
+        params.height = totalHeight + (mylistView3.getDividerHeight() * (listAdapter.getCount() - 1));
+        mylistView3.setLayoutParams(params);
     }
 }

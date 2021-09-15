@@ -70,6 +70,12 @@
             <enum name="mon" value="2" />
             <enum name="sat" value="7" />
         </attr>
+
+
     </declare-styleable>
+
+
+
+
 
 </resources>

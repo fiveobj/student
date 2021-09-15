@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="time_entry">
+        <item>全部</item>
+        <item>收入</item>
+        <item>支出</item>
+    </string-array>
+
+    <string-array name="time_one_entry">
+        <item>全部</item>
+    </string-array>
+
+
+    <string-array name="type_entry">
+        <item>全部</item>
+        <item>实习</item>
+        <item>兼职</item>
+        <item>项目</item>
+
+    </string-array>
+
+    <string-array name="type_one_entry">
+        <item>全部</item>
+    </string-array>
+
+</resources>

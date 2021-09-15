@@ -1,5 +1,6 @@
 package com.example.student.my.resume;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,15 +8,23 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import com.example.student.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link resume_peoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class resume_peoFragment extends Fragment {
+public class resume_peoFragment extends android.app.Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +34,11 @@ public class resume_peoFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ListView listView;
+    private List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+    String[] title = new String[]{"a", "aa", "ab", "abc"};
+
 
     public resume_peoFragment() {
         // Required empty public constructor
@@ -60,7 +74,37 @@ public class resume_peoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_resume_peo, container, false);
+
+        View view=inflater.inflate(R.layout.fragment_resume_peo, null);
+
+        listView=(ListView)view.findViewById(R.id.resume_peo_listview);
+        list=getData();
+        SimpleAdapter adapter=new SimpleAdapter(this.getActivity(),list,R.layout.myresume_itemlayout,new String[]{"名字"},new int[]{R.id.myresume_name});
+        listView.setAdapter(adapter);
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        Intent intent=new Intent(getActivity(),people_resumeActivity.class);
+                        startActivity(intent);
+                }
+            }
+        });
+        return view;
     }
+
+    public List<Map<String, Object>> getData() {
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        for (int i = 0; i < title.length; i++) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("名字", title[i]);
+            list.add(map);
+        }
+        return list;
+    }
+
+
 }

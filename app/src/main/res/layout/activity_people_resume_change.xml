@@ -1,9 +1,457 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".my.resume.people_resume_changeActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="15dp"
+        android:text="基本信息"
+        android:textColor="#000000"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="95dp"
+        android:layout_centerHorizontal="true"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/mysume_pback"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="头像"
+                android:layout_marginTop="15dp"
+                android:textColor="#000000"
+                />
+
+            <com.example.student.customclass.RadiusImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="100dp" />
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_zhixian"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitXY"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="真实姓名"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_myname"
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_zhixian"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitXY"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性别"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+
+            <EditText
+                android:id="@+id/myresume_change_mysex"
+                android:layout_width="194dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_zhixian"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitXY"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="政治面貌"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_myidentity"
+                android:layout_width="193dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_zhixian"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitXY"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出生年份"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_mybirthday"
+                android:layout_width="192dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_zhixian"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitXY"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="电话"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_mytel"
+                android:layout_width="192dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_zhixian"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitXY"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="学历"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_myedu"
+                android:layout_width="191dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="430dp"
+        android:layout_marginLeft="15dp"
+        android:text="求职意向"
+        android:textColor="#000000"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/mysume_pback1"
+            android:layout_centerHorizontal="true"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="期待岗位"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_mypost"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_zhixian"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitXY"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="求职区域"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_myarea"
+                android:layout_width="189dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="555dp"
+        android:layout_marginLeft="15dp"
+        android:text="我的经历"
+        android:textColor="#000000"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="575dp"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@mipmap/mysume_pback1"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自我介绍"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_myintro"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_zhixian"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitXY"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工作经历"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_myexp"
+                android:layout_width="189dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/my_zhixian"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="0dp"
+                android:scaleType="fitXY"/>
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="曾获奖项"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                />
+
+            <EditText
+                android:id="@+id/myresume_change_myaward"
+                android:layout_width="188dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="10dp"
+                android:background="#00FFFFFF" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/mysume_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/group_chat_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="720dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="保存修改"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="732dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#1E90FF">
+
+        <ImageButton
+            android:id="@+id/myresume_peo_change_back"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="28dp"
+            android:background="@mipmap/stucourse_back" />
+        <TextView
+            android:id="@+id/myresume_peo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简历"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#EFEFEF"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="28dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

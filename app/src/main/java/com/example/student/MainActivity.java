@@ -53,7 +53,7 @@ private RelativeLayout lead;
         transaction.commit();
         //设置导航栏背景颜色
         lead=(RelativeLayout)findViewById(R.id.lead);
-        lead.setBackgroundColor(Color.parseColor("#F5F5F5"));
+        lead.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
         home.setBackgroundResource(R.mipmap.home1);
         tv_home.setTextColor(Color.parseColor("#1E90FF"));
