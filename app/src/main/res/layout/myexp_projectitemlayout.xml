@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="125dp"
+    android:background="@mipmap/detail_back">
+
+    <TextView
+        android:id="@+id/myexp_project_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        />
+    <TextView
+        android:id="@+id/myexp_project_where"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="#565657"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="30dp"
+        />
+    <TextView
+        android:id="@+id/myexp_project_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="#565657"
+        android:layout_marginTop="68dp"
+        android:layout_marginLeft="30dp"
+        />
+
+    <ImageButton
+        android:id="@+id/myexp_project_imgbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/collect_fair_btn"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="250dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看评价"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:layout_marginTop="47dp"
+        android:layout_marginLeft="267dp"/>
+</RelativeLayout>

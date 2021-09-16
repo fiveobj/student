@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".my.exp.myexp_pasttimeFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myexp_pasttime_out"
+        android:textColor="#000000"
+        android:text="我的发布"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myexp_pasttime_in"
+        android:textColor="#000000"
+        android:text="我的接单"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <ListView
+        android:id="@+id/myexp_pasttime_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#00FFFFFF"
+        android:layout_marginTop="40dp"/>
+
+
+</FrameLayout>

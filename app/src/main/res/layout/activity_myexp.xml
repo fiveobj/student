@@ -1,9 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".my.myexpActivity">
+    tools:context=".my.exp.myexpActivity"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#1E90FF">
+
+        <ImageButton
+            android:id="@+id/myexp_back"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="28dp"
+            android:background="@mipmap/stucourse_back" />
+        <TextView
+            android:id="@+id/jobsubmit_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的经历"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#EFEFEF"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="28dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/stucourse_tabback"
+            android:scaleType="center"
+            />
+        <ImageButton
+            android:id="@+id/myexp_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/myexp_job"
+            android:layout_marginLeft="53dp"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/myexp_jobtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实习"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:layout_marginTop="26dp"
+            android:layout_marginLeft="51dp"/>
+
+        <ImageView
+            android:layout_width="0.1dp"
+            android:layout_height="35dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/my_shuxian"
+            android:layout_marginLeft="121.5dp"
+            android:layout_marginTop="5.5dp"/>
+
+        <ImageButton
+            android:id="@+id/myexp_pasttime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/myexp_pasttime"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/myexp_pasttimetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="兼职"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:layout_marginTop="26dp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="0.1dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="121.5dp"
+            android:layout_marginTop="5.5dp"
+            android:layout_marginEnd="121.5dp"
+            android:layout_marginRight="238dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/my_shuxian" />
+
+        <ImageButton
+            android:id="@+id/myexp_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="53dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="53dp"
+            android:layout_marginRight="287dp"
+            android:src="@mipmap/myexp_project" />
+
+        <TextView
+            android:id="@+id/myexp_projecttv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="51dp"
+            android:layout_marginRight="168dp"
+            android:text="项目"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/myexp_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+</LinearLayout>

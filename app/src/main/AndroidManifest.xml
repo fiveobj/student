@@ -35,7 +35,7 @@
         <activity android:name=".course.news.discussActivity" />
         <activity android:name=".my.myatt.myattActivity" />
         <activity android:name=".my.resume.myresumeActivity" />
-        <activity android:name=".my.myexpActivity" />
+        <activity android:name=".my.exp.myexpActivity" />
         <activity android:name=".my.account.myaccountActivity"
            >
 

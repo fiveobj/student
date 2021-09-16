@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/detail_back">
+    <ImageView
+        android:id="@+id/myexp_job_img"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/myexp_job_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="65dp"
+        />
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myexp_job_detailbtn"
+        android:src="@mipmap/collect_fair_btn"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="250dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看评价"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_marginLeft="263.5dp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/my_zhixian"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:id="@+id/myexp_job_type"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#A0A0A2"
+        android:textStyle="bold"
+        android:id="@+id/myexp_job_time"
+        android:layout_marginTop="97dp"
+        android:layout_marginLeft="30dp"/>
+
+</RelativeLayout>
