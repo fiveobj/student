@@ -3,6 +3,8 @@ package com.example.student.course;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,18 +17,26 @@ import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.TextView;
 
 
 import com.example.student.R;
 import com.example.student.course.rec.recourse_detail_Activity;
 import com.example.student.course.rec.recomCourseAdapter;
 import com.example.student.course.rec.recomCourseListViewItem;
-import com.example.student.course.stucourse.stucourceActivity;
+
+
+import com.example.student.course.stucourse.EduApplication;
 import com.example.student.course.stucourse.stuCourseAdapter;
+import com.example.student.course.stucourse.stucourceActivity;
+
 import com.example.student.course.stucourse.stuCourseListViewItem;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.agora.edu.launch.AgoraEduSDK;
+import io.agora.edu.launch.AgoraEduSDKConfig;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -52,6 +62,7 @@ public class courseFragment extends android.app.Fragment {
             "Java 实训速成课"
     };
     private ArrayAdapter<String> arrayAdapter;
+    private AppCompatButton appCompatButton;
     //-------------------------------------在学课程--------------------------------------------
 
     private ListView stucourselistv;
@@ -94,12 +105,15 @@ public class courseFragment extends android.app.Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_course,null);
+
+
 
         //-------------------------------------在学课程--------------------------------------------
 
@@ -179,6 +193,15 @@ public class courseFragment extends android.app.Fragment {
 
 
         return view;
+    }
+
+
+   @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode== AgoraEduSDK.REQUEST_CODE_RTC){
+            stuadapter.start();
+        }
     }
 
     public List<stuCourseListViewItem> getstuData(){

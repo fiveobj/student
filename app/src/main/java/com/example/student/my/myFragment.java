@@ -19,6 +19,7 @@ import com.example.student.my.account.myaccountActivity;
 import com.example.student.my.collect.mycollectActivity;
 import com.example.student.my.exp.myexpActivity;
 import com.example.student.my.myatt.myattActivity;
+import com.example.student.my.mysand.mysandActivity;
 import com.example.student.my.resume.myresumeActivity;
 
 import java.util.ArrayList;
@@ -154,7 +155,7 @@ public class myFragment extends android.app.Fragment {
                         l2=new Intent(getActivity(), myexpActivity.class);
                         break;
                     case 2:
-                        l2=new Intent(getActivity(),mysandActivity.class);
+                        l2=new Intent(getActivity(), mysandActivity.class);
                         break;
                     case 3:
                         l2=new Intent(getActivity(),mypostActivity.class);

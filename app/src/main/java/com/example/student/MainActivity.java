@@ -122,4 +122,6 @@ private class OnClick implements View.OnClickListener{
         tv_home.setTextColor(Color.parseColor("#565657"));
     }
 
+
+
 }

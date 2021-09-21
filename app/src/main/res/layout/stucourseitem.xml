@@ -65,7 +65,7 @@
         android:layout_marginStart="133dp"
         android:layout_marginLeft="103dp"
         android:layout_marginTop="66dp"/>
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatButton
 
         android:background="@mipmap/course_zhibo"
         android:id="@+id/live"

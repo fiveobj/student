@@ -1,16 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Student</string>
+    <string name="app_name" translatable="false">Student</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
-    <string name="agora_app_id">4bfa8a45369b409f979f6de2bf4df3c8</string>
-    <string name="title_activity_peoplr_sume">peoplr_sumeActivity</string>
+
+    <string name="title_activity_peoplr_sume" translatable="false">peoplr_sumeActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+
+    <string name="join_forbidden_title" translatable="false">Join Forbidden</string>
+    <string name="join_forbidden_message" translatable="false">You were kicked out of the classroom</string>
+    <string name="join_forbidden_button_confirm" translatable="false">Confirm</string>
 </resources>

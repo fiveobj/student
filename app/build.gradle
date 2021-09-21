@@ -9,7 +9,7 @@ android {
     lintOptions { abortOnError false }
     defaultConfig {
         applicationId "com.example.student"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -29,7 +29,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.navigation:navigation-fragment:2.2.2'
@@ -58,6 +59,15 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation project(':calendar')
 
+    implementation 'com.github.AgoraIO-Community.CloudClass-Android:hyphenate:v1.1.5'
+    implementation 'com.github.agorabuilder:agora-special-full:android.rtcSDKVersion'
+    implementation 'io.agora.rtm:rtm-sdk:android.rtmSDKVersion'
+    implementation 'com.github.duty-os:white-sdk-android:android.boardSDKVersion'
+    implementation 'com.github.AgoraIO-Community.CloudClass-Android:agoraui:v1.1.2'
+    implementation 'com.github.AgoraIO-Community.CloudClass-Android:agoraui:v1.1.2.2'
+    implementation 'com.github.AgoraIO-Community.CloudClass-Android:edu:v1.1.2'
     implementation 'com.android.support:recyclerview-v7:25.2.0'
+    implementation 'commons-codec:commons-codec:1.15'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     //implementation 'com.haibin:calendarview:3.2.9'
 }
