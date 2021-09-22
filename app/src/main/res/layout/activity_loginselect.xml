@@ -32,11 +32,11 @@
     android:layout_marginLeft="30dp"
     android:background="@mipmap/logins_back"/>
     <ImageView
-        android:layout_width="198dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="118dp"
+        android:layout_marginTop="100dp"
         android:background="@mipmap/logo" />
     <ImageButton
         android:id="@+id/firm_login"

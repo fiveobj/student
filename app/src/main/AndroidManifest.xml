@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-
     package="com.example.student">
-    <uses-sdk tools:overrideLibrary="educontext"
-         />
+
+    <uses-sdk tools:overrideLibrary="educontext" />
     <!-- 允许程序连接网络 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许程序录制音频 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 允许程序使用照相设备 -->
@@ -16,14 +15,15 @@
 
     <application
         android:allowBackup="true"
+        android:icon="@mipmap/ic_calendar"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:icon="@mipmap/ic_calendar"
-        tools:replace="android:icon,android:theme"
         android:supportsRtl="true"
         android:theme="@style/Theme.Student"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".my.resume.people_resume_changeActivity"></activity>
+        android:usesCleartextTraffic="true"
+        tools:replace="android:icon,android:theme">
+        <activity android:name=".course.stucourse.check.check_inActivity"></activity>
+        <activity android:name=".my.resume.people_resume_changeActivity" />
         <activity android:name=".my.resume.team_resumeActivity" />
         <activity android:name=".my.resume.people_resumeActivity" />
         <activity android:name=".course.job.ajobsubmintActivity" />
@@ -38,7 +38,7 @@
         <activity android:name=".my.myatt.myattActivity" />
         <activity android:name=".my.resume.myresumeActivity" />
         <activity android:name=".my.exp.myexpActivity" />
-        <activity android:name=".my.account.myaccountActivity"/>
+        <activity android:name=".my.account.myaccountActivity" />
         <activity android:name=".my.mysetActivity" />
         <activity android:name=".my.mypostActivity" />
         <activity android:name=".my.myserviceActivity" />

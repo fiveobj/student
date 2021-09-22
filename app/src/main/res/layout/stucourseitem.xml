@@ -42,7 +42,7 @@
         android:layout_marginLeft="73dp"
         android:layout_marginTop="39dp"
         android:textColor="#919394"/>
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatButton
         android:background="@mipmap/course_qiandao"
         android:id="@+id/signin"
         android:layout_width="22dp"

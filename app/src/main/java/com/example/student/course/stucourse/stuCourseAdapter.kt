@@ -3,6 +3,7 @@ package com.example.student.course.stucourse
 import android.Manifest
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Parcel
 import android.os.Parcelable
 import android.provider.Settings.Global.getString
@@ -17,8 +18,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.res.TypedArrayUtils.getString
 import com.example.student.R
+import com.example.student.course.stucourse.check.check_inActivity
 import com.example.student.course.stucourse.rtmtoken.RtmTokenBuilder
 import com.xuexiang.xui.utils.ResUtils
 import io.agora.edu.launch.*
@@ -50,6 +53,7 @@ class stuCourseAdapter(private val context: Activity, private val newResourceId:
         val teachername = view.findViewById<TextView>(R.id.stu_course_teachname)
         val courseimg = view.findViewById<ImageView>(R.id.stu_course_ImgV)
         stuCourseListViewItem!!.live = view.findViewById(R.id.live)
+        stuCourseListViewItem!!.sign=view.findViewById(R.id.signin)
 
         AgoraEduSDK.setConfig(AgoraEduSDKConfig(appId!!,0))
 
@@ -80,6 +84,12 @@ class stuCourseAdapter(private val context: Activity, private val newResourceId:
         }
                 //else { }
         )
+
+
+        stuCourseListViewItem!!.sign.setOnClickListener(View.OnClickListener {
+            val intent=Intent(context,check_inActivity::class.java)
+            context.startActivity(intent)
+        })
         return view
     }
 
