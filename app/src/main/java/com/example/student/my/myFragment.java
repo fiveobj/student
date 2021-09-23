@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.example.student.R;
 import com.example.student.my.account.myaccountActivity;
 import com.example.student.my.collect.mycollectActivity;
+import com.example.student.my.course.mycourseActivity;
 import com.example.student.my.exp.myexpActivity;
 import com.example.student.my.myatt.myattActivity;
 import com.example.student.my.mysand.mysandActivity;
@@ -149,7 +150,7 @@ public class myFragment extends android.app.Fragment {
                 Intent l2=null;
                 switch (position){
                     case 0:
-                        l2=new Intent(getActivity(),mycourseActivity.class);
+                        l2=new Intent(getActivity(), mycourseActivity.class);
                         break;
                     case 1:
                         l2=new Intent(getActivity(), myexpActivity.class);
