@@ -40,7 +40,7 @@
         <activity android:name=".my.exp.myexpActivity" />
         <activity android:name=".my.account.myaccountActivity" />
         <activity android:name=".my.mysetActivity" />
-        <activity android:name=".my.mypostActivity" />
+        <activity android:name=".my.mypost.mypostActivity" />
         <activity android:name=".my.myserviceActivity" />
         <activity android:name=".my.course.mycourseActivity" />
         <activity android:name=".my.collect.mycollectActivity" />
