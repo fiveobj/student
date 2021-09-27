@@ -1,5 +1,6 @@
 package com.example.student.contacts;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
@@ -149,6 +150,8 @@ public class newFragment extends android.app.Fragment implements RecyclerViewAda
 
     @Override
     public void onItemClick(View view, int position) {
+        Intent intent=new Intent(this.getActivity(),ChatActivity.class);
+        startActivity(intent);
         Toast.makeText(this.getActivity(),"点击了：" + position,Toast.LENGTH_SHORT).show();
     }
 
