@@ -1,12 +1,17 @@
 package com.example.student.course.job;
 
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -16,12 +21,19 @@ import android.widget.Toast;
 
 import com.example.student.R;
 
+import java.io.File;
+
+import static io.agora.download.DownloadHelper.TAG;
+
 public class jobsubmitActivity extends AppCompatActivity {
 
     private ImageButton santfile,santbtn,back;
     private TextView filename;
     private ImageView fileimv;
     private EditText editText;
+
+    private String path,uploadfile;
+    private File file;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +63,13 @@ public class jobsubmitActivity extends AppCompatActivity {
                 }
             }
         });
+
+        santfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showFileChooser();
+            }
+        });
        /* santfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +91,35 @@ public class jobsubmitActivity extends AppCompatActivity {
     private void setListeners(){
 
     }
+
+    private void showFileChooser(){
+        Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("*/*");
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        startActivityForResult(intent,1);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        Log.w(TAG,"返回的数据"+data);
+        if(resultCode== Activity.RESULT_OK){
+            Toast.makeText(this,"path",Toast.LENGTH_SHORT).show();
+            Uri uri=data.getData();
+
+
+                path=uri.getPath();
+                file=new File(path);
+                uploadfile=file.getName();
+                filename.setText(uploadfile);
+                fileimv.setImageResource(R.mipmap.stuc_rec_childword);
+                Log.w(TAG,"getName==="+uploadfile);
+                Toast.makeText(this,path,Toast.LENGTH_SHORT).show();
+                return;
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     /*private void checkPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED){
             try {
