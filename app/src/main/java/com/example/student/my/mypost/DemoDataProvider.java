@@ -32,4 +32,11 @@ public class DemoDataProvider {
         }.getType());
 
     }
+
+    public static List<PostInfo> getVoiceInfos(){
+        return JsonUtil.fromJson(ResourceUtils.readStringFromAssert("vioce.json"), new TypeToken<List<PostInfo>>(){
+
+        }.getType());
+
+    }
 }

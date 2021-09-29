@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="agora_app_id" translatable="false">4bfa8a45369b409f979f6de2bf4df3c8</string>
+    <string name="agora_app_id_vioce" translatable="false">a1b6c7aa7ab649e79027b6bb49865a64</string>
     <string name="agora_app_cert" translatable="false">cda620976d1d4e7f9f458d494426b926</string>
     <string name="agora_api_host" translatable="false">Agora API Host</string>
     <string name="agora_report_host" translatable="false">Report API Host</string>
+    <string name="agora_access_token" translatable="false">006a1b6c7aa7ab649e79027b6bb49865a64IACMITcGg3F1cA4owGdpX/jXozFSRjpTpHYz/cTAIj1sN9JjSIgAAAAAEAAJjRWPeUhVYQEAAQB7SFVh</string>
 </resources>

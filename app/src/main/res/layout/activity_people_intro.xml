@@ -311,6 +311,7 @@
         android:background="@mipmap/stucourse_back" />
 
     <ImageButton
+        android:id="@+id/peo_intro_voiceselect"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
