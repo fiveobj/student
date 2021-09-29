@@ -101,6 +101,8 @@ public class people_introActivity extends AppCompatActivity {
 
             }else if(options1==1){
                 Toast.makeText(this, tx, Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(this,VideoChatViewActivity.class);
+                startActivity(intent);
             }
 
             //Toast.makeText(this, tx, Toast.LENGTH_SHORT).show();

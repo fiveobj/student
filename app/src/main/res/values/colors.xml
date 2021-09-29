@@ -15,4 +15,7 @@
     <color name="colorAccent">#ffffff</color>
     <color name="solar_background">#009988</color>
     <color name="line_color">#e7e7e7</color>
+    <color name="logInfo">#4a90e2</color>
+    <color name="logWarn">#fedd56</color>
+    <color name="logError">#fe375f</color>
 </resources>

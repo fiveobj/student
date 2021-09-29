@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_video_chat_view"
+    tools:context=".contacts.VideoChatViewActivity">
+    <RelativeLayout
+        android:id="@+id/remote_video_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#484258">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/icon_padding">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_agora_largest" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/icon_padding"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/local_video_view_container"
+        android:layout_width="88dp"
+        android:layout_height="117dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="24dp"
+        android:background="#827B92"
+        android:onClick="onLocalContainerClick">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_agora_large" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/control_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+            android:id="@+id/btn_call"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:onClick="onCallClicked"
+            android:scaleType="centerCrop"
+            android:src="@drawable/btn_endcall" />
+
+        <ImageView
+            android:id="@+id/btn_switch_camera"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@id/btn_call"
+            android:layout_toRightOf="@id/btn_call"
+            android:onClick="onSwitchCameraClicked"
+            android:scaleType="centerCrop"
+            android:src="@drawable/btn_switch_camera" />
+
+        <ImageView
+            android:id="@+id/btn_mute"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:layout_toStartOf="@id/btn_call"
+            android:layout_toLeftOf="@id/btn_call"
+            android:onClick="onLocalAudioMuteClicked"
+            android:scaleType="centerCrop"
+            android:src="@drawable/btn_unmute" />
+    </RelativeLayout>
+
+    <com.example.student.contacts.LoggerRecyclerView
+        android:id="@+id/log_recycler_view"
+        android:layout_width="240dp"
+        android:layout_height="120dp"
+        android:layout_above="@+id/control_panel"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp" />
+</RelativeLayout>

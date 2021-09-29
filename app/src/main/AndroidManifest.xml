@@ -22,7 +22,8 @@
         android:theme="@style/Theme.Student"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".contacts.VoiceChatViewActivity"></activity>
+        <activity android:name=".contacts.VideoChatViewActivity"></activity>
+        <activity android:name=".contacts.VoiceChatViewActivity" />
         <activity android:name=".contacts.ChatActivity" />
         <activity android:name=".course.stucourse.check.check_inActivity" />
         <activity android:name=".my.resume.people_resume_changeActivity" />
