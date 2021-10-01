@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -64,7 +66,7 @@ public class signinActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(signinActivity.this,loginselectActivity.class);
+                Intent intent=new Intent(signinActivity.this,stuloginActivity.class);
                 startActivityForResult(intent,1);
             }
         });
@@ -110,31 +112,41 @@ public class signinActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                Gson gson=new Gson();
+                //Gson gson=new Gson();
                 String str=response.body().string();
-                LoginMessage data = gson.fromJson(str, LoginMessage.class);
-                Log.e("TAG","ResponseCode:"+response.code());
-                Log.e("TAG",data.getRspMsg());
+                //LoginMessage data = gson.fromJson(str, LoginMessage.class);
+                //Log.e("TAG","ResponseCode:"+response.code());
+                //Log.e("TAG",data.getRspMsg());
+                try {
+                    JSONObject jsonObject=new JSONObject(str);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //Toast.makeText(signinActivity.this,str,Toast.LENGTH_SHORT).show();
+                            try {
+                                if(jsonObject.getString("rspMsg").equals("操作成功")){
+                                    Intent intent=new Intent(signinActivity.this,MainActivity.class);
+                                    intent.putExtra("username",stuNo);
+                                    signinActivity.this.finish();
+                                    startActivity(intent);
+                                }else if(myid.isEmpty()){
+                                    Toast.makeText(signinActivity.this,"请输入账号",Toast.LENGTH_SHORT).show();
+                                }else if(mypass.isEmpty()){
+                                    Toast.makeText(signinActivity.this,"请输入密码",Toast.LENGTH_SHORT).show();
+                                } else
+                                {
+                                    Toast.makeText(signinActivity.this,jsonObject.getString("rspMsg"),Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
 
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(data.getRspMsg().equals("操作成功")){
-                            Intent intent=new Intent(signinActivity.this,MainActivity.class);
-                            intent.putExtra("username",stuNo);
-                            signinActivity.this.finish();
-                            startActivity(intent);
-                        }else if(myid.isEmpty()){
-                            Toast.makeText(signinActivity.this,"请输入账号",Toast.LENGTH_SHORT).show();
-                        }else if(mypass.isEmpty()){
-                            Toast.makeText(signinActivity.this,"请输入密码",Toast.LENGTH_SHORT).show();
-                        } else
-                        {
-                            Toast.makeText(signinActivity.this,data.getRspMsg(),Toast.LENGTH_SHORT).show();
                         }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
-                    }
-                });
             }
         });
 

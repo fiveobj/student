@@ -50,10 +50,9 @@
         <activity android:name=".my.mysand.mysandActivity" />
         <activity android:name=".my.myidActivity" />
         <activity android:name=".stuloginActivity" />
-        <activity android:name=".loginselectActivity" />
-        <activity android:name=".signinActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".course.stucourse.stucourceActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".signinActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

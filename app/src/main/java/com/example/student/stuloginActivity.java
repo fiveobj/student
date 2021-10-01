@@ -22,8 +22,7 @@ private ImageButton back;
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(stuloginActivity.this,loginselectActivity.class);
-                startActivity(intent);
+                stuloginActivity.this.finish();
             }
         });
     }
