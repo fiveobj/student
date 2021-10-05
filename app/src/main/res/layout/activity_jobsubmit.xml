@@ -43,6 +43,7 @@
         android:scaleType="fitXY"
         />
     <TextView
+        android:id="@+id/job_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="分值：10.0"
@@ -52,6 +53,7 @@
         android:layout_marginLeft="20dp"
         />
     <TextView
+        android:id="@+id/job_deadline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="剩余提交时间：342分钟"
@@ -79,6 +81,7 @@
         android:layout_marginLeft="20dp"
         />
     <TextView
+        android:id="@+id/job_detail"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="    完成实验一报告中的内容，实验报告要求可在资源内下载，本次实验纳入最终考核，希望同学们重视"
@@ -175,6 +178,7 @@
         android:layout_marginTop="680dp"
         />
     <TextView
+        android:id="@+id/job_issand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="提     交"

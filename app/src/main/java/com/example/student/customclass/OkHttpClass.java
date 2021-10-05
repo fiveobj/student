@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -30,6 +31,9 @@ import okhttp3.Response;
 
 public class OkHttpClass {
     //private PersistentCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
+
+    private static List<Map<String,String>> classId=new ArrayList<Map<String,String>>();
+
     private static final HashMap<String, List<Cookie>> cookieStore = new HashMap<>();
     private static OkHttpClient okHttpClient= new OkHttpClient.Builder().connectTimeout(8000, TimeUnit.MILLISECONDS).cookieJar(new CookieJar() {
         @Override
@@ -62,23 +66,45 @@ public class OkHttpClass {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Log.d("cookic",cookieStore.toString());
+        //Log.d("cookic",cookieStore.toString());
         return "FW";
     }
 
     public String addClass(String invitation_code){
         FormBody.Builder builder=new FormBody.Builder();
-        RequestBody requestBody=builder.add("username",invitation_code).build();
+        RequestBody requestBody=builder.add("invitationCode",invitation_code).build();
+        Request request=new Request.Builder().url("http://1.116.114.32:18081/student/stuAndCourse").post(requestBody).build();
+        try (Response response=okHttpClient.newCall(request).execute()){
+            if(response.isSuccessful()){
+                return response.body().string();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //Log.d("cookic",cookieStore.toString());
         return "FW";
     }
 
-
-
+    public String setjob(String jobid,String job){
+        FormBody.Builder builder=new FormBody.Builder();
+        RequestBody requestBody=builder.add("SchoolAssignmentId",jobid).add("content",job).build();
+        Request request=new Request.Builder().url("http://1.116.114.32:18081/student/studentAssignment").post(requestBody).build();
+        try (Response response=okHttpClient.newCall(request).execute()){
+            if(response.isSuccessful()){
+                return response.body().string();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //Log.d("cookic",cookieStore.toString());
+        return "FW";
+    }
 
     //------------------------------get------------------------------------------------------------
     public String courseList(){
         Request.Builder builder=new Request.Builder().url("http://1.116.114.32:18081/student/trainingCourse");
         builder.method("GET",null);
+
         Request request=builder.build();
         try(Response response=okHttpClient.newCall(request).execute()){
             if(response.isSuccessful()){
@@ -91,4 +117,20 @@ public class OkHttpClass {
         return "FW";
     }
 
+
+    public String addjob(String courseid){
+        Request.Builder builder=new Request.Builder().url("http://1.116.114.32:18081/student/schoolAssignment/byId?courseId="+courseid);
+        builder.method("GET",null);
+        //builder.addHeader("courseId",courseid);
+        Request request=builder.build();
+        try(Response response=okHttpClient.newCall(request).execute()){
+            if(response.isSuccessful()){
+                return response.body().string();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("11111",e.toString());
+        }
+        return "FW";
+    }
 }

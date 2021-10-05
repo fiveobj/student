@@ -136,74 +136,32 @@ public class courseFragment extends android.app.Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_course,null);
 
+        //------------------------------------------------加载在学课程------------------------------------------------------------
 
-
-        //-------------------------------------在学课程--------------------------------------------
-        //final HashMap<String,List<Cookie>> cookieStore=new HashMap<>();
-        //SharedPrefsCookiePersistor sharedPrefsCookiePersistor = new SharedPrefsCookiePersistor(getActivity());
-        //List<Cookie> cookies = sharedPrefsCookiePersistor.loadAll();
-        /*OkHttpClient okHttpClient=new OkHttpClient.Builder().connectTimeout(8000, TimeUnit.MILLISECONDS).build();
-
-        Request.Builder builder=new Request.Builder().url("http://1.116.114.32:18081/student/trainingCourse");
-        builder.method("GET",null);
-        Request request=builder.build();
-        Call mcall=okHttpClient.newCall(request);
-        /*for (Cookie cookie:cookies){
-            Log.e("所有的Cookie:",cookie.name()+":"+cookie.value());
-        }*/
-        /*mcall.enqueue(new Callback() {
-            @Override
-            public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                Log.e("TAG","网络错误，登录失败");
-                Log.e("TAG","发送失败消息");
-                Log.e("TAG",e.getMessage());
-            }
-
-            @Override
-            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-               // String str=response.body().string();
-                try {
-                    if(null!=response.cacheResponse()){
-                        String str=response.cacheResponse().toString();
-                        Log.d("11111","cache---"+str);
-
-                    }else {
-                        String a=response.body().string();
-                        String str=response.networkResponse().toString();
-                        Log.d("22222","network---"+str+"3333--"+a);
-
-                    }
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getActivity(),"请求成功",Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
-            }
-        });*/
-
+        stucourselistv=(ListView)view.findViewById(R.id.stu_course);
         new Thread(new Runnable() {
             @Override
             public void run() {
                 OkHttpClass tools=new OkHttpClass();
                 String result=tools.courseList();
-                Log.d("result",result);
-
+                Log.d("result-setclass",result);
+                int sum;
+                List<String> courseids= new ArrayList<>();
                 try {
                     JSONObject jsonObjectdata=new JSONObject(result);
                     String data=jsonObjectdata.getString("data");
-
+                    String courseid="";
                     JSONArray jsonArray=new JSONArray(data);
+                    sum=jsonArray.length();
+
                     for(int i=0;i<jsonArray.length();i++){
                         JSONObject jsonObject=jsonArray.getJSONObject(i);
                         //Log.d("11111",jsonObject.toString());
                         if(jsonObject!=null){
                             String name=jsonObject.optString("name");
                             String teacher=jsonObject.optString("teacherName");
-
+                            courseid=jsonObject.optString("id");
+                            courseids.add(courseid);
                             stulist.add(new stuCourseListViewItem(name,teacher,R.drawable.java));
                             Log.d("list",stulist.toString());
                             Log.d("name",name);
@@ -211,13 +169,31 @@ public class courseFragment extends android.app.Fragment {
                         }
 
                     }
+
+
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
 
                             stuadapter=new stuCourseAdapter(getActivity(),R.layout.stucourseitem,stulist);
                             stucourselistv.setAdapter(stuadapter);
+                            //动态设置高度
                             setstulistvhigh();
+
+                            //添加点击事件
+                            stucourselistv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                                    Intent intent=null;
+                                    intent=new Intent(getActivity(), stucourceActivity.class);
+
+                                    intent.putExtra("id",courseids.get(position));
+                                    startActivity(intent);
+
+                                }
+                            });
+
                         }
                     });
 
@@ -230,19 +206,8 @@ public class courseFragment extends android.app.Fragment {
         }).start();
 
 
-        stucourselistv=(ListView)view.findViewById(R.id.stu_course);
 
-        //添加点击事件
-        stucourselistv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=null;
-                intent=new Intent(getActivity(), stucourceActivity.class);
-                startActivity(intent);
 
-            }
-        });
-        //动态设置高度
 
 
         //-------------------------------------推荐课程--------------------------------------------
@@ -263,8 +228,9 @@ public class courseFragment extends android.app.Fragment {
         });
 
         setreclistvhigh();
-        //添加课程
+        //------------------------------------------添加课程---------------------------------------------
         coureseadd=view.findViewById(R.id.course_add);
+
         coureseadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -272,16 +238,60 @@ public class courseFragment extends android.app.Fragment {
                 addclassDialog.setSubmit(new addclassDialog.IOnCanceListener() {
                     @Override
                     public void onCancel(com.example.student.course.addclassDialog dialog) {
-                        Toast.makeText(getActivity(),"添加成功",Toast.LENGTH_SHORT).show();
-                        stulist=getstuDataone();
-                        stuadapter=new stuCourseAdapter(getActivity(),R.layout.stucourseitem,stulist);
-                        stucourselistv.setAdapter(stuadapter);
-                        setstulistvhigh();
+                       String code=addclassDialog.getSubmit();
+                       Log.d("code111111",code);
+                       //Toast.makeText(getActivity(),""+code,Toast.LENGTH_SHORT).show();
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                OkHttpClass tools=new OkHttpClass();
+                                String result=tools.addClass(code);
+                                Log.d("result-addclass",result);
+                                try {
+                                    JSONObject jsonObjectdata=new JSONObject(result);
+                                    String data=jsonObjectdata.getString("data");
+
+
+                                        JSONObject jsonObject = new JSONObject(data);
+                                        //Log.d("11111",jsonObject.toString());
+                                        if (jsonObject != null) {
+                                            String name = jsonObject.optString("name");
+                                            String teacher = jsonObject.optString("teacherName");
+
+                                            stulist.add(new stuCourseListViewItem(name, teacher, R.drawable.java));
+                                            Log.d("list", stulist.toString());
+                                            Log.d("name", name);
+                                            Log.d("tea", teacher);
+                                        }
+
+                                    getActivity().runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(getActivity(),"添加成功",Toast.LENGTH_SHORT).show();
+                                            stuadapter.notifyDataSetChanged();
+                                            stucourselistv.setAdapter(stuadapter);
+                                            setstulistvhigh();
+                                        }
+                                    });
+
+                                    } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }).start();
+
+
+                        //stulist=getstuDataone();
+                        //stuadapter=new stuCourseAdapter(getActivity(),R.layout.stucourseitem,stulist);
+                        //stucourselistv.setAdapter(stuadapter);
+                        //setstulistvhigh();
                     }
                 });
                 addclassDialog.show();
             }
         });
+
+
 
 
         //搜索课程

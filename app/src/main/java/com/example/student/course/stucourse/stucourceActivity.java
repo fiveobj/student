@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,6 +26,8 @@ private ImageButton back;
 private TextView retv,ntv,jtv,dtv,ltv;
 private FragmentManager manager;
 private FragmentTransaction transaction;
+private Intent intent;
+private String courseId;
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -62,6 +65,11 @@ private FragmentTransaction transaction;
         transaction.commit();
 
 
+        intent=getIntent();
+        if(intent!=null){
+            courseId=intent.getStringExtra("id");
+        }
+
     }
 
 
@@ -94,7 +102,9 @@ private FragmentTransaction transaction;
                     ntv.setTextColor(Color.parseColor("#1E90FF"));
                     break;
                 case R.id.stucourse_job:
-                    transaction.replace(R.id.stucourse_layout,new jobFragment());
+                    jobFragment jobf=new jobFragment();
+                    jobf.getcourseId(courseId);
+                    transaction.replace(R.id.stucourse_layout,jobf);
                     job.setBackgroundResource(R.mipmap.stucourse_job1);
                     jtv.setTextColor(Color.parseColor("#1E90FF"));
                     break;

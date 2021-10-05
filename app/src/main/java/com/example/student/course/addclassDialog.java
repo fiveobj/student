@@ -70,6 +70,13 @@ public class addclassDialog extends Dialog implements View.OnClickListener{
         im_submit.setOnClickListener(this);
     }
 
+    public String getSubmit() {
+        if (ed_text.getText().toString()!=null)
+        submit=ed_text.getText().toString();
+        else
+            submit="111111111";
+        return submit;
+    }
 
     public interface IOnCanceListener{
         void onCancel(addclassDialog dialog);

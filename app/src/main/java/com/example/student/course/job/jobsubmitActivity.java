@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.student.R;
+import com.example.student.customclass.OkHttpClass;
 
 import java.io.File;
 
@@ -28,9 +29,10 @@ import static io.agora.download.DownloadHelper.TAG;
 public class jobsubmitActivity extends AppCompatActivity {
 
     private ImageButton santfile,santbtn,back;
-    private TextView filename;
+    private TextView filename,scoretv,timetv,detailtv,jobissand;
     private ImageView fileimv;
     private EditText editText;
+    private String score,detail,jobid,time;
 
     private String path,uploadfile;
     private File file;
@@ -53,12 +55,46 @@ public class jobsubmitActivity extends AppCompatActivity {
             }
         });
 
+        Intent intent=getIntent();
+        if(intent!=null){
+            score="分值： "+intent.getStringExtra("full");
+            detail=intent.getStringExtra("detail");
+            jobid=intent.getStringExtra("jobid");
+            time="截止时间： "+intent.getStringExtra("deadline");
+            scoretv.setText(score);
+            detailtv.setText(detail);
+            timetv.setText(time);
+
+
+        }
+
+        String job=editText.getText().toString();
+
+
         santbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(TextUtils.isEmpty(editText.getText())){
                     Toast.makeText(jobsubmitActivity.this,"请输入答案",Toast.LENGTH_SHORT).show();
                 }else{
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            OkHttpClass tools=new OkHttpClass();
+                            String result=tools.setjob(jobid,job);
+                            Log.d("result-setjob",result);
+
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        editText.setFocusableInTouchMode(false);
+                                        jobissand.setText("已提交，点击修改");
+                                    }
+                                });
+
+
+                        }
+                    }).start();
                     Toast.makeText(jobsubmitActivity.this,"提交成功",Toast.LENGTH_SHORT).show();
                 }
             }
@@ -85,6 +121,10 @@ public class jobsubmitActivity extends AppCompatActivity {
         fileimv = (ImageView) findViewById(R.id.santjobimv);
         back=(ImageButton) findViewById(R.id.jobsubmit_back);
         editText=(EditText)findViewById(R.id.answer_edit);
+        scoretv =(TextView) findViewById(R.id.job_score);
+        timetv=(TextView) findViewById(R.id.job_deadline);
+        detailtv=(TextView) findViewById(R.id.job_detail);
+        jobissand=(TextView)findViewById(R.id.job_issand);
         //setListeners();
     }
 

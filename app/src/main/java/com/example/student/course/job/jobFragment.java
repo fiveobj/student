@@ -5,13 +5,22 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.student.R;
+import com.example.student.course.stucourse.stuCourseListViewItem;
+import com.example.student.customclass.OkHttpClass;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +40,8 @@ public class jobFragment extends android.app.Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private String id;
 
     //---------------------------平时作业----------------------------
     private ListView list1,list2;
@@ -93,30 +104,85 @@ public class jobFragment extends android.app.Fragment {
 
         list1=(ListView)view.findViewById(R.id.stu_job1);
         list2=(ListView)view.findViewById(R.id.stu_job2);
-        stulist1=getData(logo1,stateimg1,pnum1,name1,start1,state1,end1,goal1);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClass tools=new OkHttpClass();
+                String result=tools.addjob(id);
+                Log.d("result-addjob",result);
+                List<String> jobids= new ArrayList<>();
+                try {
+                    JSONObject jsonObjectdata=new JSONObject(result);
+                    String data=jsonObjectdata.getString("data");
+                    String jobid="";
+                    String fullmack="";
+                    String detail="";
+                    String dealtime="";
+                    JSONArray jsonArray=new JSONArray(data);
+                    for(int i=0;i<jsonArray.length();i++){
+                        JSONObject jsonObject=jsonArray.getJSONObject(i);
+                        //Log.d("11111",jsonObject.toString());
+                        if(jsonObject!=null){
+                            String name=jsonObject.optString("title");
+                            String starttime=jsonObject.optString("startTime");
+                            dealtime=jsonObject.optString("deadline");
+                            fullmack=jsonObject.optString("fullMark");
+                            detail=jsonObject.optString("detail");
+                            String stunum=jsonObject.optString("handInNum");
+                            String state=jsonObject.optString("status");
+                            String score=jsonObject.optString("score");
+
+                            jobid=jsonObject.optString("id");
+                            jobids.add(jobid);
+                            stulist1.add(new stuJobListViewItem(R.mipmap.logo,name,"结束时间： "+dealtime,"开始时间： "+starttime,"得分/总分： "+score+"/"+fullmack,state,"已有"+stunum+"人参与"));
+
+
+                            Log.d("name",name);
+
+                        }
+
+                    }
+
+                    String finalFullmack = fullmack;
+                    String finalDetail = detail;
+                    String finalDealtime = dealtime;
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            adapter1=new stuJobAdapter(getActivity(),R.layout.stu_jobitem,stulist1);
+                            list1.setAdapter(adapter1);
+                            setJoblistVihg();
+                            list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    Intent intent=null;
+                                    intent=new Intent(getActivity(), jobsubmitActivity.class);
+                                    intent.putExtra("jobid",jobids.get(position));
+                                    intent.putExtra("full", finalFullmack);
+                                    intent.putExtra("detail", finalDetail);
+                                    intent.putExtra("deadline", finalDealtime);
+                                    startActivity(intent);
+                                }
+                            });
+
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+        //stulist1=getData(logo1,stateimg1,pnum1,name1,start1,state1,end1,goal1);
         stulist2=getData(logo2,stateimg2,pnum2,name2,start2,state2,end2,goal2);
 
-        adapter1=new stuJobAdapter(this.getActivity(),R.layout.stu_jobitem,stulist1);
+        //adapter1=new stuJobAdapter(this.getActivity(),R.layout.stu_jobitem,stulist1);
         adapter2=new stuJobAdapter(this.getActivity(),R.layout.stu_jobitem,stulist2);
 
-        list1.setAdapter(adapter1);
+        //list1.setAdapter(adapter1);
         list2.setAdapter(adapter2);
 
 
-        list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=null;
-                switch (position){
-                    case 0:
-                        intent=new Intent(getActivity(), jobsubmitActivity.class);
-                        break;
-                    default:
-                        break;
-                }
-                startActivity(intent);
-            }
-        });
 
         list2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -140,10 +206,33 @@ public class jobFragment extends android.app.Fragment {
 
         for(int i=0;i<name.length;i++)
         {
-            list.add(new stuJobListViewItem(logo[i],stateimg[i],name[i],end[i],start[i],goal[i],state[i],pnum[i]));
+            list.add(new stuJobListViewItem(logo[i],name[i],end[i],start[i],goal[i],state[i],pnum[i]));
         }
 
 
         return list;
     }
-}
+
+    public void getcourseId(String id) {
+        this.id = id;
+        if (this.id != null) {
+            Log.d("id", id);
+        }
+
+    }
+        public void setJoblistVihg(){
+            ListAdapter listAdapter=list1.getAdapter();
+            if (listAdapter == null) {
+                return;
+            }
+            int totalHeight = 0;
+            for (int i = 0; i < listAdapter.getCount(); i++) {
+                View listItem = listAdapter.getView(i, null, list1);
+                listItem.measure(0, 0);
+                totalHeight += listItem.getMeasuredHeight();
+            }
+            ViewGroup.LayoutParams params = list1.getLayoutParams();
+            params.height = totalHeight + (list1.getDividerHeight() * (listAdapter.getCount() - 1));
+            list1.setLayoutParams(params);
+        }
+    }
