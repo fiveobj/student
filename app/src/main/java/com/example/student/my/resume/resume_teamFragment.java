@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -78,17 +79,21 @@ public class resume_teamFragment extends android.app.Fragment {
         View view=inflater.inflate(R.layout.fragment_resume_team, null);
         listView=(ListView)view.findViewById(R.id.resume_team_listview);
         list=getData();
-        SimpleAdapter adapter=new SimpleAdapter(this.getActivity(),list,R.layout.myresume_itemlayout,new String[]{"名字"},new int[]{R.id.myresume_name});
+        resumeItemAdapter adapter=new resumeItemAdapter(this.getActivity(),list,R.layout.myresume_itemlayout,new String[]{"名字"},new int[]{R.id.myresume_name});
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        adapter.setmOnClickListener(new resumeItemAdapter.onClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position){
-                    case 0:
-                        Intent intent=new Intent(getActivity(),people_resume_changeActivity.class);
+            public void onClick(View view, int position) {
+                ImageButton btn=view.findViewById(R.id.myresume_btn);
+
+                btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(getActivity(),team_resumeActivity.class);
                         startActivity(intent);
-                }
+                    }
+                });
             }
         });
 

@@ -1,5 +1,6 @@
 package com.example.student.course;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -7,6 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,12 +35,31 @@ import com.example.student.course.stucourse.stuCourseAdapter;
 import com.example.student.course.stucourse.stucourceActivity;
 
 import com.example.student.course.stucourse.stuCourseListViewItem;
+import com.example.student.customclass.OkHttpClass;
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import io.agora.edu.launch.AgoraEduSDK;
 import io.agora.edu.launch.AgoraEduSDKConfig;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Cookie;
+import okhttp3.CookieJar;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -116,11 +139,99 @@ public class courseFragment extends android.app.Fragment {
 
 
         //-------------------------------------在学课程--------------------------------------------
+        //final HashMap<String,List<Cookie>> cookieStore=new HashMap<>();
+        //SharedPrefsCookiePersistor sharedPrefsCookiePersistor = new SharedPrefsCookiePersistor(getActivity());
+        //List<Cookie> cookies = sharedPrefsCookiePersistor.loadAll();
+        /*OkHttpClient okHttpClient=new OkHttpClient.Builder().connectTimeout(8000, TimeUnit.MILLISECONDS).build();
+
+        Request.Builder builder=new Request.Builder().url("http://1.116.114.32:18081/student/trainingCourse");
+        builder.method("GET",null);
+        Request request=builder.build();
+        Call mcall=okHttpClient.newCall(request);
+        /*for (Cookie cookie:cookies){
+            Log.e("所有的Cookie:",cookie.name()+":"+cookie.value());
+        }*/
+        /*mcall.enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                Log.e("TAG","网络错误，登录失败");
+                Log.e("TAG","发送失败消息");
+                Log.e("TAG",e.getMessage());
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+               // String str=response.body().string();
+                try {
+                    if(null!=response.cacheResponse()){
+                        String str=response.cacheResponse().toString();
+                        Log.d("11111","cache---"+str);
+
+                    }else {
+                        String a=response.body().string();
+                        String str=response.networkResponse().toString();
+                        Log.d("22222","network---"+str+"3333--"+a);
+
+                    }
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getActivity(),"请求成功",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            }
+        });*/
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClass tools=new OkHttpClass();
+                String result=tools.courseList();
+                Log.d("result",result);
+
+                try {
+                    JSONObject jsonObjectdata=new JSONObject(result);
+                    String data=jsonObjectdata.getString("data");
+
+                    JSONArray jsonArray=new JSONArray(data);
+                    for(int i=0;i<jsonArray.length();i++){
+                        JSONObject jsonObject=jsonArray.getJSONObject(i);
+                        //Log.d("11111",jsonObject.toString());
+                        if(jsonObject!=null){
+                            String name=jsonObject.optString("name");
+                            String teacher=jsonObject.optString("teacherName");
+
+                            stulist.add(new stuCourseListViewItem(name,teacher,R.drawable.java));
+                            Log.d("list",stulist.toString());
+                            Log.d("name",name);
+                            Log.d("tea",teacher);
+                        }
+
+                    }
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            stuadapter=new stuCourseAdapter(getActivity(),R.layout.stucourseitem,stulist);
+                            stucourselistv.setAdapter(stuadapter);
+                            setstulistvhigh();
+                        }
+                    });
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+
 
         stucourselistv=(ListView)view.findViewById(R.id.stu_course);
-        stulist=getstuData();
-        stuadapter=new stuCourseAdapter(this.getActivity(),R.layout.stucourseitem,stulist);
-        stucourselistv.setAdapter(stuadapter);
+
         //添加点击事件
         stucourselistv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -133,7 +244,7 @@ public class courseFragment extends android.app.Fragment {
         });
         //动态设置高度
 
-        setstulistvhigh();
+
         //-------------------------------------推荐课程--------------------------------------------
 
         recomcourselistv=(ListView)view.findViewById(R.id.recom_course);
@@ -204,14 +315,14 @@ public class courseFragment extends android.app.Fragment {
         }
     }
 
-    public List<stuCourseListViewItem> getstuData(){
+    /*public List<stuCourseListViewItem> getstuData(){
         List<stuCourseListViewItem> list=new ArrayList<stuCourseListViewItem>();
 
         list.add(new stuCourseListViewItem("JAVA实训","张三",R.drawable.java));
         list.add(new stuCourseListViewItem("Web实训","李四",R.drawable.webstorm));
         list.add(new stuCourseListViewItem("python实训","王五",R.drawable.python));
         return list;
-    }
+    }*/
 
     public List<stuCourseListViewItem> getstuDataone(){
         List<stuCourseListViewItem> list=new ArrayList<stuCourseListViewItem>();

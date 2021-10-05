@@ -3,11 +3,14 @@ package com.example.student;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +19,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.student.customclass.OkHttpClass;
+import com.franmontiel.persistentcookiejar.PersistentCookieJar;
+import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
+import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.google.gson.Gson;
 
 import org.jetbrains.annotations.NotNull;
@@ -33,12 +40,18 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.agora.base.network.RetrofitManager;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Cookie;
+import okhttp3.CookieJar;
 import okhttp3.FormBody;
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -50,6 +63,7 @@ public class signinActivity extends AppCompatActivity {
     private ImageButton signin;
     private TextView login;
     private String myid,mypass,path,result;
+    private Context context;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -61,6 +75,7 @@ public class signinActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.TRANSPARENT);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
 
+        context=this;
         //跳转注册页面
         login=(TextView)findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
@@ -81,23 +96,125 @@ public class signinActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 loginPost();
+                //new Thread(networkTask).start();
             }
         });
     }
 
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Bundle data = msg.getData();
+            String val = data.getString("value");
+            Log.i("mylog", "请求结果为-->" + val);
+            // TODO
+            // UI界面的更新等相关操作
+        }
+    };
+
+    /**
+     * 网络操作相关的子线程
+     */
+    Runnable networkTask = new Runnable() {
+
+        @Override
+        public void run() {
+            // TODO
+            // 在这里进行 http request.网络请求相关操作
+            myid=id.getText().toString();
+            mypass=pass.getText().toString();
+            OkHttpClass tools=new OkHttpClass();
+            String result=tools.Login(myid,mypass);
+
+            Message msg = new Message();
+            Bundle data = new Bundle();
+            data.putString("value", "请求结果");
+            msg.setData(data);
+            handler.sendMessage(msg);
+        }
+    };
     public void loginPost(){
         myid=id.getText().toString();
         mypass=pass.getText().toString();
-        getData(myid,mypass);
+
+        //getData(myid,mypass);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClass tools=new OkHttpClass();
+                String result=tools.Login(myid,mypass);
+                Log.d("result",result);
+                try {
+                    /*response=okHttpClient.newCall(request).execute();
+                    List<String> headers1=response.priorResponse().networkResponse().headers("Set-Cookie");
+                    String cc="";
+                    for(String c:headers1){
+                        String s=c.split(";")[0];
+                        cc=cc+s+"";
+                    }
+                    Log.d("Cookie",cc);*/
+                    JSONObject jsonObject=new JSONObject(result);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            //Toast.makeText(signinActivity.this,str,Toast.LENGTH_SHORT).show();
+                            try {
+                                if(jsonObject.getString("rspMsg").equals("操作成功")){
+                                    Intent intent=new Intent(signinActivity.this,MainActivity.class);
+                                    //intent.putExtra("username",stuNo);
+                                    signinActivity.this.finish();
+                                    startActivity(intent);
+                                }else if(myid.isEmpty()){
+                                    Toast.makeText(signinActivity.this,"请输入账号",Toast.LENGTH_SHORT).show();
+                                }else if(mypass.isEmpty()){
+                                    Toast.makeText(signinActivity.this,"请输入密码",Toast.LENGTH_SHORT).show();
+                                } else
+                                {
+                                    Toast.makeText(signinActivity.this,jsonObject.getString("rspMsg"),Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+
+
+        }
         //path="http://1.116.114.32:18081/student/login";
         //new postTask().execute(myid,mypass,path);
 
-    }
+
 
 
     //okhttp3
     private void getData(String stuNo,String password){
-        OkHttpClient okHttpClient= new OkHttpClient.Builder().connectTimeout(8000, TimeUnit.MILLISECONDS).build();
+        //CookieJar cookieJar=new PersistentCookieJar(new SetCookieCache(),new SharedPrefsCookiePersistor(context));
+        PersistentCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
+        final HashMap<String, List<Cookie>> cookieStore = new HashMap<>();
+        OkHttpClient okHttpClient= new OkHttpClient.Builder().connectTimeout(8000, TimeUnit.MILLISECONDS).cookieJar(new CookieJar() {
+            @Override
+            public void saveFromResponse(@NotNull HttpUrl httpUrl, @NotNull List<Cookie> list) {
+                cookieStore.put(httpUrl.host(), list);
+            }
+
+            @NotNull
+            @Override
+            public List<Cookie> loadForRequest(@NotNull HttpUrl httpUrl) {
+                List<Cookie> cookies = cookieStore.get(httpUrl.host());
+                //for(Cookie cookie:cookies)
+                //Log.e("cookie","c"+cookie);
+                return cookies != null ? cookies : new ArrayList<Cookie>();
+            }
+        }).build();
         FormBody.Builder builder=new FormBody.Builder();
         final RequestBody requestBody=builder.add("username",stuNo).add("password",password).build();
         final Request request=new Request.Builder().url("http://1.116.114.32:18081/student/login").post(requestBody).build();
@@ -118,6 +235,14 @@ public class signinActivity extends AppCompatActivity {
                 //Log.e("TAG","ResponseCode:"+response.code());
                 //Log.e("TAG",data.getRspMsg());
                 try {
+                    /*response=okHttpClient.newCall(request).execute();
+                    List<String> headers1=response.priorResponse().networkResponse().headers("Set-Cookie");
+                    String cc="";
+                    for(String c:headers1){
+                        String s=c.split(";")[0];
+                        cc=cc+s+"";
+                    }
+                    Log.d("Cookie",cc);*/
                     JSONObject jsonObject=new JSONObject(str);
                     runOnUiThread(new Runnable() {
                         @Override
@@ -149,6 +274,7 @@ public class signinActivity extends AppCompatActivity {
 
             }
         });
+
 
     }
     /*public class postTask extends AsyncTask{

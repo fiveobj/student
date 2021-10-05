@@ -19,6 +19,7 @@ import com.example.student.my.account.myaccountActivity;
 import com.example.student.my.collect.mycollectActivity;
 import com.example.student.my.course.mycourseActivity;
 import com.example.student.my.exp.myexpActivity;
+import com.example.student.my.id.myidActivity;
 import com.example.student.my.myatt.myattActivity;
 import com.example.student.my.mypost.mypostActivity;
 import com.example.student.my.mysand.mysandActivity;
@@ -129,7 +130,7 @@ public class myFragment extends android.app.Fragment {
                 Intent l1=null;
                 switch (position){
                     case 0:
-                        l1=new Intent(getActivity(),myidActivity.class);
+                        l1=new Intent(getActivity(), myidActivity.class);
                         break;
                     case 1:
                         l1=new Intent(getActivity(), myaccountActivity.class);

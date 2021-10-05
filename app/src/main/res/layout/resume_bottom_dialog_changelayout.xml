@@ -1,13 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:orientation="horizontal"
+    android:layout_height="260dp"
+    android:orientation="vertical"
     android:background="#FFFFFF"
     >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/resume_change_qxiao"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/quxiao" />
+</RelativeLayout>
+
 <HorizontalScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/resume_method1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/resume_method1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="20dp"/>
+
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/resume_method1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="20dp"/>
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/resume_method1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="20dp"/>
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/resume_method1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="20dp"/>
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/resume_method1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="20dp"/>
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/resume_method1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="20dp"/>
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/resume_method1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="20dp"/>
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/resume_method1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+
+
 
 </HorizontalScrollView>
 </LinearLayout>

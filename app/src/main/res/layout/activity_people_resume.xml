@@ -41,7 +41,7 @@
     android:background="@mipmap/mysume_methodback"
     android:layout_centerInParent="true">
     <ImageView
-        android:id="@+id/resume_method"
+        android:id="@+id/resume_method1"
         android:layout_width="323dp"
         android:layout_height="444dp"
         android:src="@mipmap/resume_method1"

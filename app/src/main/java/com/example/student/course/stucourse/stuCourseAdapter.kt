@@ -33,11 +33,11 @@ class stuCourseAdapter(private val context: Activity, private val newResourceId:
     private val tag = "stuCourseAdapter"
     private var mDialog: ForbiddenDialog? = null
     private val con=context
-    val roomType = AgoraEduRoomType.AgoraEduRoomTypeBig.value
-    val roleType = 2
+    val roomType = AgoraEduRoomType.AgoraEduRoomType1V1.value
+    val roleType = AgoraEduRoleType.AgoraEduRoleTypeStudent.value
     val userName = "123"
-    val roomName = "123"
-    val roomUuid = "123"
+    val roomName = "333"
+    val roomUuid = "3424"
     val userUuid = userName.plus(roleType)
     var roomR = AgoraEduRegionStr.cn
 

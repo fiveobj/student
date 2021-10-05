@@ -70,6 +70,8 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:25.2.0'
     implementation 'commons-codec:commons-codec:1.15'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
    // implementation 'io.agora.rtc:voice-sdk:3.5.0'
     //implementation 'com.haibin:calendarview:3.2.9'
 }
