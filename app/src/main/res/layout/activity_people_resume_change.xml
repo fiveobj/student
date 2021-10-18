@@ -63,6 +63,7 @@
             >
 
             <RelativeLayout
+                android:id="@+id/resume_change_picture"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -77,7 +78,7 @@
                     />
 
                 <ImageView
-                    android:id="@+id/resume_sand_picture"
+                    android:id="@+id/resume_change_picturetm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -221,7 +222,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="25dp">
+                android:layout_marginLeft="25dp"
+                android:id="@+id/resume_change_phone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -233,13 +235,14 @@
 
 
                 <TextView
+                    android:id="@+id/resume_change_phonetv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="50dp"
                     android:text="19951274923"
-                    android:textColor="#949494" />
+                    android:textColor="#000000" />
 
                 <ImageView
                     android:layout_width="300dp"
@@ -264,10 +267,11 @@
             />
 
         <LinearLayout
+            android:id="@+id/resume_change_edulayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
             android:layout_marginTop="5dp"
+            android:background="#FFFFFF"
             android:orientation="vertical">
 
             <TextView
@@ -277,8 +281,8 @@
                 android:layout_marginTop="25dp"
                 android:text="本平台实训经历"
                 android:textColor="#949494"
-                android:textStyle="bold"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="300dp"
@@ -287,9 +291,11 @@
                 android:layout_marginTop="5dp"
                 android:scaleType="fitXY"
                 android:src="@mipmap/my_zhixian" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -313,6 +319,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -335,6 +342,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -366,17 +374,17 @@
                     android:layout_marginTop="10dp"
                     android:text="在校经历"
                     android:textColor="#949494"
-                    android:textStyle="bold"
                     android:textSize="12dp"
-                    />
+                    android:textStyle="bold" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/resume_add"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="50dp"
+                    android:scaleType="fitXY"
                     android:src="@mipmap/resune_add" />
             </RelativeLayout>
 
@@ -429,6 +437,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/resume_change_joblayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
@@ -538,10 +547,11 @@
                     android:textSize="12dp"
                     android:textStyle="bold"/>
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/resume_add1"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:scaleType="fitXY"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="50dp"
@@ -593,6 +603,7 @@
                     />
 
                 <EditText
+                    android:id="@+id/myresume_change_killed"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -627,6 +638,7 @@
                     />
 
                 <EditText
+                    android:id="@+id/myresume_change_langeed"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -662,6 +674,7 @@
                     />
 
                 <EditText
+                    android:id="@+id/myresume_change_zhengshued"
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -697,6 +710,7 @@
                     />
 
                 <EditText
+                    android:id="@+id/myresume_change_acted"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -732,6 +746,7 @@
                     android:textColor="#000000" />
 
                 <EditText
+                    android:id="@+id/myresume_change_loveed"
                     android:layout_width="210dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -745,7 +760,26 @@
 
 
             </RelativeLayout>
+
         </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/myresume_change_method"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="选择简历模板"
+                android:textColor="#000000" />
+
+
+
+        </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

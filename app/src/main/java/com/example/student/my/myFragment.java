@@ -1,10 +1,12 @@
 package com.example.student.my;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.example.student.R;
+import com.example.student.customclass.OkHttpClass;
 import com.example.student.my.account.myaccountActivity;
 import com.example.student.my.collect.mycollectActivity;
 import com.example.student.my.course.mycourseActivity;
@@ -24,6 +27,9 @@ import com.example.student.my.myatt.myattActivity;
 import com.example.student.my.mypost.mypostActivity;
 import com.example.student.my.mysand.mysandActivity;
 import com.example.student.my.resume.myresumeActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,7 +62,7 @@ public class myFragment extends android.app.Fragment {
     String[] title2=new String[]{"我的课程","我的经历","投递记录","理想职位"};
     int[] imageId3=new int[]{R.mipmap.my_set,R.mipmap.my_service};
     String[] title3=new String[]{"设置","智能客服"};
-    private TextView collect,att,resume;
+    private TextView collect,att,resume,isAuth;
     public myFragment() {
         // Required empty public constructor
     }
@@ -96,7 +102,7 @@ public class myFragment extends android.app.Fragment {
         collect=(TextView)view.findViewById(R.id.my_collect);
         att=(TextView)view.findViewById(R.id.my_att);
         resume=(TextView)view.findViewById(R.id.my_resume);
-
+        isAuth=(TextView)view.findViewById(R.id.my_ifschool);
 
         mylistView1=(ListView)view.findViewById(R.id.my_listview1);
         mylistView2=(ListView)view.findViewById(R.id.my_listview2);
@@ -191,6 +197,31 @@ public class myFragment extends android.app.Fragment {
         });
 
         setlistvhigh3();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClass tools=new OkHttpClass();
+                String result=tools.isAuth();
+                Log.d("isAuth",result);
+                try {
+                    JSONObject jsonObject=new JSONObject(result);
+                    String data=jsonObject.getString("data");
+                    JSONObject jsonObject1=new JSONObject(data);
+                    String is=jsonObject1.getString("isAuth");
+                    if(is.equals("1")){
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                isAuth.setText("学籍已认证");
+                                isAuth.setTextColor(Color.parseColor("#575757"));
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
         return view;
     }
     public List<Map<String,Object>> getData1(){

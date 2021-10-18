@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fab.FabProjectActivity"
+    android:background="@drawable/fab_background3"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/fab_project_back"
+        android:layout_width="16dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="20dp"
+        android:background="@mipmap/fab_backup"
+        />
+
+    <LinearLayout
+        android:id="@+id/fab_pro_tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="本周你看中了"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 5 "
+                android:textSize="35dp"
+                android:textColor="#FFC933"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="项实习"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="其中有"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 3 "
+                android:textSize="35dp"
+                android:textColor="#FFC933"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="份简历受到了HR的青睐"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你最近寻找的理想职位是"
+            android:textSize="20dp"
+            android:textColor="#FFFFFF"
+                />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android开发师"
+            android:textSize="35dp"
+            android:textColor="#FFC933"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/fab_project_next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="15dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/fab_next"/>
+
+
+</RelativeLayout>

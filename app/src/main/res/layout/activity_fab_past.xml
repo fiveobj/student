@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fab.FabPastActivity"
+    android:background="@drawable/fab_background4"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/fab_past_back"
+        android:layout_width="16dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="20dp"
+        android:background="@mipmap/fab_backup"
+        />
+
+    <LinearLayout
+        android:id="@+id/fab_past_tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="本周你完成了"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 5 "
+                android:textSize="35dp"
+                android:textColor="#FFC933"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="项兼职"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="80dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="还有"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 3 "
+                android:textSize="35dp"
+                android:textColor="#FFC933"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="份兼职正在进行中"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="目前兼职已为你带来了"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+
+            
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 7 "
+                android:textSize="35dp"
+                android:textColor="#FFC933"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="份收入"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/fab_past_tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="截止至今天"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="150dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你在云尚学已经获得了"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1200元"
+                android:textSize="35dp"
+                android:textColor="#FFC933"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="的财富"
+                android:textSize="20dp"
+                android:textColor="#FFFFFF"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="努力学习，勤奋工作"
+            android:textSize="25dp"
+            android:textColor="#FFC933"
+            />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="让青春更加光彩"
+            android:textSize="30dp"
+            android:textColor="#FFC933"
+            />
+
+
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/fab_past_next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="15dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/fab_next"/>
+
+</RelativeLayout>

@@ -39,4 +39,9 @@ public class DemoDataProvider {
         }.getType());
 
     }
+
+    public static String[] menuString=new String[]{
+            "虚拟实验室",
+            "添加课程",
+    };
 }

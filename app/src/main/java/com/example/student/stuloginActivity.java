@@ -18,6 +18,7 @@ private ImageButton back;
         //设置顶部状态栏为透明
         getWindow().setStatusBarColor(Color.TRANSPARENT);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+
         back=(ImageButton)findViewById(R.id.stulogin_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

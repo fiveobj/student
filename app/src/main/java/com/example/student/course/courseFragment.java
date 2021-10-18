@@ -36,7 +36,10 @@ import com.example.student.course.stucourse.stucourceActivity;
 
 import com.example.student.course.stucourse.stuCourseListViewItem;
 import com.example.student.customclass.OkHttpClass;
+import com.example.student.my.mypost.DemoDataProvider;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
+import com.xuexiang.xui.widget.popupwindow.popup.XUISimplePopup;
+import com.xuexiang.xutil.display.DensityUtils;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -77,7 +80,7 @@ public class courseFragment extends android.app.Fragment {
     private String mParam1;
     private String mParam2;
 
-    private ImageButton coureseadd;
+    private ImageButton coureseadd,course_more;
     private ImageButton search;
     private AutoCompleteTextView autoCompleteTextView;
     private String[] normlString=new String[]{
@@ -98,6 +101,8 @@ public class courseFragment extends android.app.Fragment {
     private recomCourseAdapter recomadapter;
     private List<recomCourseListViewItem> recomlist=new ArrayList<recomCourseListViewItem>();
 
+
+    private XUISimplePopup mListPopup;
 
     public courseFragment() {
         // Required empty public constructor
@@ -228,69 +233,27 @@ public class courseFragment extends android.app.Fragment {
         });
 
         setreclistvhigh();
-        //------------------------------------------添加课程---------------------------------------------
-        coureseadd=view.findViewById(R.id.course_add);
 
-        coureseadd.setOnClickListener(new View.OnClickListener() {
+
+        course_more=view.findViewById(R.id.course_add);
+        course_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addclassDialog addclassDialog=new addclassDialog(getActivity());
-                addclassDialog.setSubmit(new addclassDialog.IOnCanceListener() {
-                    @Override
-                    public void onCancel(com.example.student.course.addclassDialog dialog) {
-                       String code=addclassDialog.getSubmit();
-                       Log.d("code111111",code);
-                       //Toast.makeText(getActivity(),""+code,Toast.LENGTH_SHORT).show();
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                OkHttpClass tools=new OkHttpClass();
-                                String result=tools.addClass(code);
-                                Log.d("result-addclass",result);
-                                try {
-                                    JSONObject jsonObjectdata=new JSONObject(result);
-                                    String data=jsonObjectdata.getString("data");
-
-
-                                        JSONObject jsonObject = new JSONObject(data);
-                                        //Log.d("11111",jsonObject.toString());
-                                        if (jsonObject != null) {
-                                            String name = jsonObject.optString("name");
-                                            String teacher = jsonObject.optString("teacherName");
-
-                                            stulist.add(new stuCourseListViewItem(name, teacher, R.drawable.java));
-                                            Log.d("list", stulist.toString());
-                                            Log.d("name", name);
-                                            Log.d("tea", teacher);
-                                        }
-
-                                    getActivity().runOnUiThread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Toast.makeText(getActivity(),"添加成功",Toast.LENGTH_SHORT).show();
-                                            stuadapter.notifyDataSetChanged();
-                                            stucourselistv.setAdapter(stuadapter);
-                                            setstulistvhigh();
-                                        }
-                                    });
-
-                                    } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }).start();
-
-
-                        //stulist=getstuDataone();
-                        //stuadapter=new stuCourseAdapter(getActivity(),R.layout.stucourseitem,stulist);
-                        //stucourselistv.setAdapter(stuadapter);
-                        //setstulistvhigh();
-                    }
-                });
-                addclassDialog.show();
+                mListPopup.showDown(v);
             }
         });
+        initListPopup();
+        //------------------------------------------添加课程---------------------------------------------
+        //coureseadd=view.findViewById(R.id.course_add);
 
+
+       /* coureseadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+*/
 
 
 
@@ -385,5 +348,76 @@ public class courseFragment extends android.app.Fragment {
         ViewGroup.LayoutParams params = recomcourselistv.getLayoutParams();
         params.height = totalHeight + (recomcourselistv.getDividerHeight() * (listAdapter.getCount() - 1));
         recomcourselistv.setLayoutParams(params);
+    }
+
+    private void initListPopup(){
+        mListPopup=new XUISimplePopup(getActivity(), DemoDataProvider.menuString).create(DensityUtils.dip2px(getActivity(),170),((adapter, item, position) -> {
+            switch (position){
+                case 0:
+
+                    break;
+                case 1:
+                    runAddclouse();
+                    break;
+                default:
+                    break;
+            }
+        })).setHasDivider(true);
+    }
+    private void runAddclouse(){
+        addclassDialog addclassDialog=new addclassDialog(getActivity());
+        addclassDialog.setSubmit(new addclassDialog.IOnCanceListener() {
+            @Override
+            public void onCancel(com.example.student.course.addclassDialog dialog) {
+                String code=addclassDialog.getSubmit();
+                Log.d("code111111",code);
+                //Toast.makeText(getActivity(),""+code,Toast.LENGTH_SHORT).show();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        OkHttpClass tools=new OkHttpClass();
+                        String result=tools.addClass(code);
+                        Log.d("result-addclass",result);
+                        try {
+                            JSONObject jsonObjectdata=new JSONObject(result);
+                            String data=jsonObjectdata.getString("data");
+
+
+                            JSONObject jsonObject = new JSONObject(data);
+                            //Log.d("11111",jsonObject.toString());
+                            if (jsonObject != null) {
+                                String name = jsonObject.optString("name");
+                                String teacher = jsonObject.optString("teacherName");
+
+                                stulist.add(new stuCourseListViewItem(name, teacher, R.drawable.java));
+                                Log.d("list", stulist.toString());
+                                Log.d("name", name);
+                                Log.d("tea", teacher);
+                            }
+
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getActivity(),"添加成功",Toast.LENGTH_SHORT).show();
+                                    stuadapter.notifyDataSetChanged();
+                                    stucourselistv.setAdapter(stuadapter);
+                                    setstulistvhigh();
+                                }
+                            });
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+
+
+                //stulist=getstuDataone();
+                //stuadapter=new stuCourseAdapter(getActivity(),R.layout.stucourseitem,stulist);
+                //stucourselistv.setAdapter(stuadapter);
+                //setstulistvhigh();
+            }
+        });
+        addclassDialog.show();
     }
 }

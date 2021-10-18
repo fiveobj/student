@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -100,6 +101,23 @@ public class OkHttpClass {
         return "FW";
     }
 
+
+    public String setcert(String school,String dapter,String major,String classes,String sid){
+        FormBody.Builder builder=new FormBody.Builder();
+        RequestBody requestBody=builder.add("collegeName",school).add("dapartment",dapter).add("major",major).add("schoolClass",classes).add("sid",sid).build();
+        Request request=new Request.Builder().url("http://1.116.114.32:18081/student/auth").post(requestBody).build();
+        try (Response response=okHttpClient.newCall(request).execute()){
+            if(response.isSuccessful()){
+                return response.body().string();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //Log.d("cookic",cookieStore.toString());
+        return "FW";
+    }
+
+
     //------------------------------get------------------------------------------------------------
     public String courseList(){
         Request.Builder builder=new Request.Builder().url("http://1.116.114.32:18081/student/trainingCourse");
@@ -117,7 +135,21 @@ public class OkHttpClass {
         return "FW";
     }
 
+    public String isAuth(){
+        Request.Builder builder=new Request.Builder().url("http://1.116.114.32:18081/student");
+        builder.method("GET",null);
 
+        Request request=builder.build();
+        try(Response response=okHttpClient.newCall(request).execute()){
+            if(response.isSuccessful()){
+                return response.body().string();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("11111",e.toString());
+        }
+        return "FW";
+    }
     public String addjob(String courseid){
         Request.Builder builder=new Request.Builder().url("http://1.116.114.32:18081/student/schoolAssignment/byId?courseId="+courseid);
         builder.method("GET",null);
@@ -132,5 +164,36 @@ public class OkHttpClass {
             Log.d("11111",e.toString());
         }
         return "FW";
+    }
+
+    public String getResumeThoned(String id){
+        Request.Builder builder=new Request.Builder().url("http://1.116.114.32:18081/student/resumeTemplet/"+id);
+        builder.method("GET",null);
+        //builder.addHeader("courseId",courseid);
+        Request request=builder.build();
+        try(Response response=okHttpClient.newCall(request).execute()){
+            if(response.isSuccessful()){
+                return response.body().string();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("11111",e.toString());
+        }
+        return "FW";
+
+    }
+
+    public InputStream getResume(String url){
+        Request.Builder builder=new Request.Builder().url(url);
+        Request request=builder.build();
+        try(Response response=okHttpClient.newCall(request).execute()){
+            if(response.isSuccessful()){
+                return response.body().byteStream();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("11111",e.toString());
+        }
+        return null;
     }
 }

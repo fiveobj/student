@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fab.FabStuActivity"
+    android:background="@drawable/fab_background1"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/fab_stu_back"
+        android:layout_width="16dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="20dp"
+        android:background="@mipmap/fab_backup"
+        />
+    <LinearLayout
+        android:id="@+id/stu_layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="90dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="书山有路勤为径，"
+            android:textColor="#FFC933"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:text="学海无涯苦作舟"
+            android:textColor="#FFC933"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本周你进行了6门课程的学习"
+            android:textColor="#000000"
+            android:textSize="15sp"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="每天的学习时长如下："
+            android:textColor="#000000"
+            android:textSize="15sp"/>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:id="@+id/chart1"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/stu_layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="90dp">
+
+
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本周你完成了老师发布的12项作业"
+            android:textColor="#000000"
+            android:textSize="15sp"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="老师给你的作业评分是："
+            android:textColor="#000000"
+            android:textSize="15sp"/>
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:layout_width="320dp"
+            android:layout_height="350dp"
+            android:id="@+id/chart2"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="行是知之始，"
+            android:textColor="#FFC933"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:text="知是行之成"
+            android:textColor="#FFC933"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/stu_layout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="160dp">
+
+
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="恭喜你顺利完成了本周的学习"
+            android:textColor="#FFC933"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下周继续再接再厉吧！"
+            android:textColor="#FFC933"
+            android:textSize="20sp"/>
+
+
+
+
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/fab_stu_next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="15dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/fab_next" />
+
+</RelativeLayout>

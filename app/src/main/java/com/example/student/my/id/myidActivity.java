@@ -78,6 +78,32 @@ public class myidActivity extends AppCompatActivity {
         init();
         setListeners();
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClass tools=new OkHttpClass();
+                String result=tools.isAuth();
+                Log.d("isAuth",result);
+                try {
+                    JSONObject jsonObject=new JSONObject(result);
+                    String data=jsonObject.getString("data");
+                    JSONObject jsonObject1=new JSONObject(data);
+                    String is=jsonObject1.getString("isAuth");
+                    if(is.equals("1")){
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                studCertv.setText("已认证");
+                                studCertv.setTextColor(Color.parseColor("#949494"));
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
     }
 
     private void init(){
@@ -167,6 +193,8 @@ public class myidActivity extends AppCompatActivity {
                 case R.id.id_realname:
                 case R.id.id_school:
                 case R.id.id_student_cert:
+                    Intent intent=new Intent(myidActivity.this,CertActivity.class);
+                    startActivity(intent);
                 default:
                 break;
             }
