@@ -28,7 +28,8 @@
         android:theme="@style/Theme.Student"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".my.id.CertActivity"></activity>
+        <activity android:name=".course.labActivity" />
+        <activity android:name=".my.id.CertActivity" />
         <activity android:name=".fab.FabProjectActivity" />
         <activity android:name=".fab.FabPastActivity" />
         <activity android:name=".fab.FabJobActivity" />

@@ -242,8 +242,10 @@ public class courseFragment extends android.app.Fragment {
                 mListPopup.showDown(v);
             }
         });
+
+        //------------------------------------------添加课程+虚拟实验室---------------------------------------------
+
         initListPopup();
-        //------------------------------------------添加课程---------------------------------------------
         //coureseadd=view.findViewById(R.id.course_add);
 
 
@@ -354,7 +356,8 @@ public class courseFragment extends android.app.Fragment {
         mListPopup=new XUISimplePopup(getActivity(), DemoDataProvider.menuString).create(DensityUtils.dip2px(getActivity(),170),((adapter, item, position) -> {
             switch (position){
                 case 0:
-
+                    Intent intent=new Intent(getActivity(),labActivity.class);
+                    startActivity(intent);
                     break;
                 case 1:
                     runAddclouse();
